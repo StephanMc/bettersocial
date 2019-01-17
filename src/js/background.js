@@ -41,7 +41,7 @@ export const FacefontBg = {
     },
 
     getSettingsManager() {
-        // return requireSettingsManager()
+        return requireLoader.settingsManager()
     },
 
     // getDefaultAudioURL: function () {
@@ -87,7 +87,7 @@ export const FacefontBg = {
     },
 
     installMessageListener: function () {
-
+        const _that = this;
         let notificationsManager = this.getNotificationsManager();
         console.log("notificationsManagerrrr", notificationsManager)
         console.log("NotifiNotificationsManager", notificationsManager.getDefaultAudioURL())
@@ -95,11 +95,11 @@ export const FacefontBg = {
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             switch (request.wish) {
                 case "loadAllPreferences": // This case is called each time FB is (re)loaded
-                    sendResponse(this.getNotificationsManager().buildAllPrefResponseObject());
+                    sendResponse(_that.getSettingsManager().buildAllPrefResponseObject());
                     break;
 
                 case "loadOnePreference":
-                    const data = this.getNotificationsManager().getPreference(request.prefName);
+                    const data = _that.getSettingsManager().getPreference(request.prefName);
                     const response = {
                         prefName: request.prefName,
                         prefValue: data
@@ -109,12 +109,12 @@ export const FacefontBg = {
                     break;
                 //FIXME: Check if called from content script
                 case "saveAllPreferences":
-                    this.getNotificationsManager().saveAllPreferences(request);
+                    _that.getSettingsManager().saveAllPreferences(request);
                     sendResponse({});
                     break;
 
                 case "saveOnePreference":
-                    this.getNotificationsManager().setPreference(request.prefName, request.prefValue);
+                    _that.getSettingsManager().setPreference(request.prefName, request.prefValue);
                     sendResponse({});
                     break;
                 default:

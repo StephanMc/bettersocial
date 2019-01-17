@@ -1,12 +1,5 @@
-// console.log("chrome.extension", chrome.extension.getBackgroundPage())
-
-// const SettingsManager = chrome.extension.getBackgroundPage().FacefontBg.getSettingsManager();
-// import SettingsManager from "./SettingsManager"
 const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager();
 import Util from "./Util";
-
-import {hot} from "react-hot-loader";
-
 
 const DEFAULT_MUSIC_URL = chrome.extension.getURL("/default.mp3");
 
@@ -59,7 +52,6 @@ class NotificationsManager {
 
             // const notificationFile = Util.getJSDir() + "notification.bundle.js";
             const notificationFile = Util.getJSDir() + "notification.js";
-            console.log("notificationfile", notificationFile)
             this.notificationWorker = new Worker(notificationFile);
 
             this.notificationWorker.onmessage = event => {
@@ -68,7 +60,6 @@ class NotificationsManager {
                 };
                 this.processGetNotificationsCount(objResponse);
             };
-            console.log("worker initialized");
         }
     }
 
@@ -93,7 +84,7 @@ class NotificationsManager {
     updateUINotifCount(count) {
         // count = 1
         this.notificationBundle.notifCounter = count;
-        console.log("set count notif to " + count)
+        console.log("set count notif to " + count, typeof count);
         if (!localStorage["useNotif"] || count == 0) {
             chrome.browserAction.setBadgeText({text: ""});
         } else {

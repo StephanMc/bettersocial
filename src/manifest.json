@@ -1,5 +1,5 @@
 {
-  "description" :"__MSG_extension_brief_description__",
+  "description": "__MSG_extension_brief_description__",
   "options_page": "options.html",
   "background": {
     "page": "background.html"
@@ -14,7 +14,7 @@
     "16": "icon-16.png"
   },
   "manifest_version": 2,
-  "name" :"__MSG_extension_full_name__",
+  "name": "__MSG_extension_full_name__",
   "permissions": [
     "unlimitedStorage",
     "storage",
@@ -23,9 +23,22 @@
     "http://*.facebook.com/*",
     "https://*.facebook.com/*"
   ],
-  "default_locale" : "en",
+  "default_locale": "en",
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "web_accessible_resources": [
-    "src/js/*"
+    "*.js",
+    "*.css"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.facebook.com/*",
+        "https://*.facebook.com/*"
+      ],
+      "js": [
+        "facefont_cs.bundle.js"
+      ],
+      "run_at": "document_start"
+    }
   ]
 }

@@ -29,7 +29,7 @@ class SettingsManager {
         firstRun: true,
         useNotif: true,
         enableFacefont: true,
-        enableTxtSize: false,
+        enableTxtSize: true,
         enableAudio: true
     };
 
@@ -67,6 +67,16 @@ class SettingsManager {
                 notificationsManager().runNotificationProcess();
             }
         }
+        //TODO: make content scripts know about that; with chrome.tabs.query (facebookurl).sendMessage(prefChange, with the newPref object, which is current localStorage)
+        chrome.tabs.query({url: "https://*.facebook.com/*"}, (tabs) => {
+            tabs.forEach(tab => {
+                const changedPreference = {
+                    [pName]: pValue
+                };
+                chrome.tabs.sendMessage(tab.id, {changedPreference}, (responseCallback) => {
+                })
+            })
+        })
     }
 
     saveAllPreferences(request) {

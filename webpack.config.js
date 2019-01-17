@@ -23,7 +23,11 @@ var options = {
     popup: path.join(__dirname, "src", "js", "popup.js"),
     options: path.join(__dirname, "src", "js", "options.js"),
     background: path.join(__dirname, "src", "js", "background.js"),
+    facefont_cs: path.join(__dirname, "src", "js", "facefont_cs.js"),
     // notification: path.join(__dirname, "src", "js", "notification.js")
+  },
+  chromeExtensionBoilerplate: {
+    notHotReload: ["facefont_cs"]
   },
   output: {
     path: path.join(__dirname, "build"),

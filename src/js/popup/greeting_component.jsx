@@ -37,7 +37,6 @@ class GreetingComponent extends React.Component {
     handleChangeFontFamily = event => {
         const {name, value} = event.target;
 
-        console.log({name, value})
         this.setState({[event.target.name]: event.target.value},
             () => settingsManager().setPreference(name, value));
     };
@@ -112,10 +111,11 @@ class GreetingComponent extends React.Component {
                                         }}
                                         type={"number"}
                                         onChange={(e) => {
-                                            console.log(e.target.value)
+                                            let value = e.target.value;
+                                            settingsManager().setPreference("textSize", value)
                                         }}
                                         disabled={!this.state.enableFacefont}
-                                        defaultValue={15}
+                                        defaultValue={settingsManager().getPreference("textSize")}
                                     />
                                 </div>
                             </div>
@@ -150,7 +150,6 @@ class GreetingComponent extends React.Component {
 
                         <ListGroupItem tag="button" action
                                        onClick={() => {
-                                           console.log('you clickec settings');
                                            Util.openOrFocusPage(chrome.extension.getURL("options.html"))
                                        }}>
                             <i className="material-icons"
@@ -199,7 +198,5 @@ class GreetingComponent extends React.Component {
         )
     }
 };
-
-console.log(Util.counter++ )
 
 export default hot(module)(GreetingComponent)
