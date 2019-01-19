@@ -80,9 +80,10 @@ class GreetingComponent extends React.Component {
                         <ListGroupItem>
 
                             <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline'}}>
-                                <div style={{marginRight: '0px', width: '83%'}}>
+                                <div style={{marginRight: '0px', width: '90%'}}>
+
                                 <span
-                                    style={{color: 'gray', fontSize: 11}}>Font theme</span><br/>
+                                    style={{color: 'gray', fontSize: 11}}>Font Theme</span><br/>
                                     <FormControl style={{width: 'inherit'}}>
                                         <Select
                                             value={this.state.fontFamily}
@@ -92,7 +93,7 @@ class GreetingComponent extends React.Component {
                                             name="fontFamily"
                                         >
                                             <MenuItem value="">
-                                                <em>Facebook</em>
+                                                <em>By default</em>
                                             </MenuItem>
                                             {settingsManager().getSafeWebFonts().map((font, index) =>
                                                 <MenuItem key={"font" + index} value={font.family}
@@ -101,8 +102,8 @@ class GreetingComponent extends React.Component {
                                         </Select>
                                     </FormControl>
                                 </div>
-                                <div style={{width: 90}}>
-                                    <span style={{color: 'gray', fontSize: 11}}>Font size</span>
+                                <div style={{width: 55}}>
+                                    <span style={{color: 'gray', fontSize: 11}}>Size</span>
                                     <br/>
                                     <Input
                                         placeholder="Size"

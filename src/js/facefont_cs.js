@@ -90,7 +90,7 @@ export const Facefont = {
                 // this.parseDocument(Facefont_streamClass);
                 // this.parseDocument("aboveUnitContent"); // Shared Links in Timeline
                 // this.parseDocument("messageBody");
-            }, 800);
+            }, 50);
         }
     },
 
@@ -102,13 +102,25 @@ export const Facefont = {
     createStyleElement(css) {
 
         const STYLE_ID = "facefont__style";
-        let styleElement = document.getElementById(STYLE_ID);
+        const LINK_ID = "facefont__link";
+
+        const head = document.head || document.getElementsByTagName('head')[0];
+
+        // Create link item <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+        if (!document.getElementById(LINK_ID)) {
+            const link = document.createElement('link');
+            link.id = LINK_ID;
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.googleapis.com/css?family=Lato|Open+Sans|Oxygen|Nunito|Alegreya+Sans|Alegreya';
+            head.appendChild(link);
+        }
+
+        // Create style item
+        const styleElement = document.getElementById(STYLE_ID);
         if (styleElement) {
-            //TODO: should remove the node
             styleElement.remove();
         }
 
-        const head = document.head || document.getElementsByTagName('head')[0];
         const style = document.createElement('style');
         style.id = STYLE_ID
 
@@ -129,7 +141,7 @@ export const Facefont = {
             fontFamily = "font-family: " + fontFamily + " !important;"
         }
         // Do not parse if Facefont has already size 14
-        if (textSize == "14" && this.preferences.oldTextSize == "") return;
+        // if (textSize == "14" && this.preferences.oldTextSize == "") return;
 
         const content = window; // for compatibility ! fixme: no more needed
         if (!content || !content.document) return;
