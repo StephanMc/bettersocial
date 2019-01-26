@@ -2,6 +2,7 @@
 // import "reactstrap/dist/"
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
+import "../css/bootstrap.min.css"
 import "../css/popup.css";
 
 import Greeting from "./popup/greeting_component.jsx";
