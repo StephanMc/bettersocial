@@ -27,7 +27,8 @@ class GreetingComponent extends React.Component {
         this.state = {
             enableFacefont: settingsManager().getPreference("enableFacefont"),
             fontFamily: settingsManager().getPreference("fontFamily") || "",
-            collapse: true
+            collapse: true,
+            useNotif: !!settingsManager().getPreference("useNotif")
         }
 
         this.handleChangeFontFamily = this.handleChangeFontFamily.bind(this)
@@ -52,6 +53,9 @@ class GreetingComponent extends React.Component {
 
     render() {
         const backgroundPage = chrome.extension.getBackgroundPage().FacefontBg;
+
+
+        let notificationBadgeText = !this.state.useNotif ? "Disabled" : backgroundPage.getNotificationsManager().getNotificationCount();
 
         return (
             <div style={{width: 295, backgroundColor: 'ghostwhite', margin: 0, padding: 13}}>
@@ -136,7 +140,7 @@ class GreetingComponent extends React.Component {
                             <div> Notifications</div>
                             <div>
                                 <Badge
-                                    color="danger">{backgroundPage.getNotificationsManager().getNotificationCount()}</Badge>
+                                    color={this.state.useNotif && notificationBadgeText > 0 ? "danger" : "light"}>{notificationBadgeText}</Badge>
                             </div>
                         </ListGroupItem>
                         }

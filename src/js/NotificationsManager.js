@@ -127,7 +127,6 @@ class NotificationsManager {
     }
 
     playMusic() {
-        console.log("should play music?", settingsManager().getPreference("enableAudio"))
         if (!settingsManager().getPreference("enableAudio")) {
             return;
         }

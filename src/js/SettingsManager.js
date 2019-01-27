@@ -8,13 +8,13 @@ class SettingsManager {
             {title: "Dark", family: '"Arial Black", Gadget, sans-serif'},
             {title: "Comic", family: '"Comic Sans MS", cursive, sans-serif'},
             {title: "Lucida", family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif'},
-            {title: "Monospace", family: '"Courier New", Courier, monospace'},
-            {title: "Lucida Console", family: '"Lucida Console", Monaco, monospace'},
+            {title: "Coder", family: '"Courier New", Courier, monospace'},
+            {title: "Geek", family: '"Lucida Console", Monaco, monospace'},
 
             {title: "Lato", family: 'Lato, sans-serif'},
             {title: "Nunito", family: 'Nunito, sans-serif'},
             {title: "Alegreya", family: '"Alegreya Sans", sans-serif'},
-            {title: "Open Sans", family: '"Open Sans", sans-serif'},
+            {title: "Sweet", family: '"Open Sans", sans-serif'},
         ].sort((fontA, fontB) => {
             if (fontA.title < fontB.title) {
                 return -1;
