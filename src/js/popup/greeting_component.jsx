@@ -53,14 +53,20 @@ class GreetingComponent extends React.Component {
 
     render() {
         const backgroundPage = chrome.extension.getBackgroundPage().FacefontBg;
-
+        const logo = require('../../img/icon-48.png')
 
         let notificationBadgeText = !this.state.useNotif ? "Disabled" : backgroundPage.getNotificationsManager().getNotificationCount();
 
         return (
-            <div style={{width: 295, backgroundColor: 'ghostwhite', margin: 0, padding: 13}}>
-                <div style={{textAlign: 'center', backgroundColor: '#00000055', padding: 10}}>
-                    <Typography variant="h6" color="inherit">
+            <div style={{width: 270, backgroundColor: 'whitesmoke', margin: 0, padding: 5}}>
+                <div style={{
+                    textAlign: 'center',
+                    backgroundColor: 'hsla(210, 16%, 87%, 1)',
+                    padding: 4,
+                    borderRadius: 5
+                }}>
+                    <Typography variant="h6" color="inherit" style={{fontWeight: 300}}>
+
                         Facefont
                     </Typography>
 
@@ -76,7 +82,7 @@ class GreetingComponent extends React.Component {
                                 value="enableFacefont"
                             />
                         }
-                        label="Enable Facefont"
+                        label={"Enable Facefont"}
                     />
 
                     <ListGroup>
@@ -146,13 +152,6 @@ class GreetingComponent extends React.Component {
                         }
 
 
-                        {/*<ListGroupItem*/}
-                        {/*className="justify-content-between">*/}
-                        {/*Notifications <Badge*/}
-                        {/*color="danger">{backgroundPage.getNotificationsManager().getNotificationCount()}</Badge>*/}
-                        {/*</ListGroupItem>*/}
-
-
                         <ListGroupItem tag="button" action
                                        onClick={() => {
                                            Util.openOrFocusPage(chrome.extension.getURL("options.html"))
@@ -172,33 +171,14 @@ class GreetingComponent extends React.Component {
 
 
                 </div>
-                <div style={{fontSize: 12, color: '#323232'}}>
-                    You like the addon ? Buy a coffee to the developer
-                </div>
-                {/*<AppBar  color="primary" position={"fixed"}>*/}
-                {/*<Toolbar>*/}
-                {/*<Typography variant="h6" color="inherit">*/}
-                {/*Facefont title*/}
-                {/*</Typography>*/}
-                {/*</Toolbar>*/}
-                {/*</AppBar>*/}
+                <div style={{fontSize: 12, marginTop: 8}}><a
+                    href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A9SKZXCDEEASW'
+                    target='_blank' style={{textDecoration: 'none', color: '#007bff'}}>
 
-                {/*<FormControl className={classes.formControl}>*/}
-                {/*<InputLabel htmlFor="age-simple">Age</InputLabel>*/}
-                {/*<Select*/}
-                {/*inputProps={{*/}
-                {/*name: 'age',*/}
-                {/*id: 'age-simple',*/}
-                {/*}}*/}
-                {/*>*/}
-                {/*<MenuItem value="">*/}
-                {/*<em>None</em>*/}
-                {/*</MenuItem>*/}
-                {/*<MenuItem value={10}>Ten</MenuItem>*/}
-                {/*<MenuItem value={20}>Twenty</MenuItem>*/}
-                {/*<MenuItem value={30}>Thirty</MenuItem>*/}
-                {/*</Select>*/}
-                {/*</FormControl>*/}
+                    You like the addon ? Buy a ☕ to the developer
+                </a>
+                </div>
+
             </div>
         )
     }

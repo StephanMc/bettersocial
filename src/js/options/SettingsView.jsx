@@ -13,7 +13,7 @@ const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader
 const notificationManager = () => chrome.extension.getBackgroundPage().requireLoader.notificationsManager()
 const appVersion = chrome.runtime.getManifest().version;
 
-class OptionsApp extends React.Component {
+class SettingsView extends React.Component {
 
     constructor(props) {
         super(props);
@@ -206,9 +206,7 @@ class OptionsApp extends React.Component {
                                             color="secondary"
                                             style={{padding: '3px 7px', marginTop: -10}}
                                             disabled={!this.state.enableFacefont}
-                                            onClick={() => notificationManager().doPlay()}
-
-                                    >
+                                            onClick={() => notificationManager().doPlay()}>
                                         <Icon style={{fontSize: 25}}>play_arrow_icon</Icon> Preview
                                     </Button>
 
@@ -225,22 +223,36 @@ class OptionsApp extends React.Component {
                         <div className="card-body">
                             <div className="ml-4">
                                 Facefont is made with ❤, with the hope to make better your daily usage of Facebook.<br/>
-                                <br/>
 
-                                For any question or bug report, feel free to contact me: <a
-                                href={"mailto:stephan.kouadio@gmail.com"}>stephan.kouadio@gmail.com</a>
+                            </div>
+                            <br/>
 
-                                <hr/>
-                                <br/>
+                            <h6>Donations</h6>
+                            <div className="ml-4">
                                 If you like my work and want to encourage me, your donation will be very appreciated
                                 😍<br/>
-                                <a href='http://bit.ly/donate-stephanmc'
+                                <a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A9SKZXCDEEASW'
                                    target='_blank' style={{textDecoration: 'none'}}>
                                     <Button style={{textTransform: 'none'}} color={"secondary"}>Make a donation
                                         💛 </Button>
                                 </a>
+
                             </div>
 
+                            <br/>
+                            <hr/>
+                            <h6>Questions or bug report</h6>
+                            <div className="ml-4">
+                                For any question or bug report, feel free to contact me: <a
+                                href={"mailto:stephan.kouadio@gmail.com"}>stephan.kouadio@gmail.com</a>
+
+                            </div>
+                            <br/>
+
+                            <h6>Privacy</h6>
+                            <div className="ml-4">
+                                Facefont does not collect any user or browser data.
+                            </div>
 
                         </div>
                     </div>
@@ -259,4 +271,4 @@ class OptionsApp extends React.Component {
 }
 
 
-export default hot(module)(OptionsApp)
+export default hot(module)(SettingsView)
