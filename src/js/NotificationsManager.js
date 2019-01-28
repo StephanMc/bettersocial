@@ -84,7 +84,6 @@ class NotificationsManager {
     updateUINotifCount(count) {
         // count = 1
         this.notificationBundle.notifCounter = count;
-        console.log("set count notif to " + count, typeof count);
         if (!localStorage["useNotif"] || count == 0) {
             chrome.browserAction.setBadgeText({text: ""});
         } else {
@@ -163,18 +162,15 @@ class NotificationsManager {
                 this.tryPopupNotifications(notifCounter, msgCounter, requestCounter, mdoc);
             }
         } catch (e) {
-            console.log(e);
             this.updateUINotifCount(0);
         }
     }
 
     tryPopupNotifications(notifCounter, msgCounter, requestCounter, mdoc) {
-        console.log({notifCounter, msgCounter, requestCounter})
         var notificationBundle = this.notificationBundle;
         var totalNotif = notifCounter + msgCounter + requestCounter;
 
         if (this.firstPopupHasRun == false) {
-            console.log("1")
             this.firstPopupHasRun = true;
 
             Util.checkIsOnFacebook(isOnFacebook => {
@@ -192,7 +188,6 @@ class NotificationsManager {
             //     FacefontBg.isFirstTimeNotifCalled = false;
             // }, 10000);
         } else {
-            console.log("2")
             let stringText = null;
             stringText = this.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);
 
@@ -213,7 +208,6 @@ class NotificationsManager {
     }
 
     doPopupNewNotificationsCount(totalNotif) {
-        console.log("doPopupNewNotificationsCount")
         const title =
             totalNotif +
             " " +
@@ -230,7 +224,6 @@ class NotificationsManager {
 
     doPopup(title, text, textClickable, urlToClick) {
 
-        console.log("doPopup")
         this.onNotificationClickUrl = urlToClick;
         const options = {};
         options.type = "basic";

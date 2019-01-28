@@ -1,6 +1,9 @@
 {
   "description": "__MSG_extension_brief_description__",
-  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
   "version" :"9.0",
   "background": {
     "page": "background.html"

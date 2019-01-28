@@ -19,6 +19,7 @@ import Select from '@material-ui/core/Select';
 import Util from "../Util"
 
 const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager()
+const localize = Util.localize;
 
 class GreetingComponent extends React.Component {
     constructor(props) {
@@ -82,7 +83,7 @@ class GreetingComponent extends React.Component {
                                 value="enableFacefont"
                             />
                         }
-                        label={"Enable Facefont"}
+                        label={localize("label_enableFaceFont")}
                     />
 
                     <ListGroup>
@@ -93,7 +94,7 @@ class GreetingComponent extends React.Component {
                                 <div style={{marginRight: '0px', width: '90%'}}>
 
                                 <span
-                                    style={{color: 'gray', fontSize: 11}}>Font Theme</span><br/>
+                                    style={{color: 'gray', fontSize: 11}}>{localize("label_font_theme")}</span><br/>
                                     <FormControl style={{width: 'inherit'}}>
                                         <Select
                                             value={this.state.fontFamily}
@@ -103,7 +104,7 @@ class GreetingComponent extends React.Component {
                                             name="fontFamily"
                                         >
                                             <MenuItem value="">
-                                                <em>By default</em>
+                                                <em>{localize("label_font_by_default")}</em>
                                             </MenuItem>
                                             {settingsManager().getSafeWebFonts().map((font, index) =>
                                                 <MenuItem key={"font" + index} value={font.family}
@@ -113,7 +114,7 @@ class GreetingComponent extends React.Component {
                                     </FormControl>
                                 </div>
                                 <div style={{width: 55}}>
-                                    <span style={{color: 'gray', fontSize: 11}}>Size</span>
+                                    <span style={{color: 'gray', fontSize: 11}}>{localize('label_font_size')}</span>
                                     <br/>
                                     <Input
                                         placeholder="Size"
@@ -131,7 +132,7 @@ class GreetingComponent extends React.Component {
                                 </div>
                             </div>
                             <div style={{fontSize: 11, marginTop: 19, color: '#8f8f8f'}}>
-                                <em>These will be applied to Facebook posts</em>
+                                <em>{localize('popup_fonts_help')}</em>
                             </div>
                         </ListGroupItem>
                         }
@@ -141,9 +142,22 @@ class GreetingComponent extends React.Component {
                             onClick={() => {
                                 Util.openOrFocusPage(backgroundPage.getNotificationsManager().getNotificationClickUrl())
                             }}
-                            tag="button" action
+                            tag="button"
+                            action
                             style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline'}}>
-                            <div> Notifications</div>
+                            <div>
+                                <i className="material-icons"
+                                   style={{
+                                       float: 'left',
+                                       fontSize: 18,
+                                       marginTop: 3,
+                                       marginRight: 5,
+                                       color: 'lightsteelblue'
+                                   }}>
+                                    notification_important
+                                </i>{" "}
+                                Notifications
+                            </div>
                             <div>
                                 <Badge
                                     color={this.state.useNotif && notificationBadgeText > 0 ? "danger" : "light"}>{notificationBadgeText}</Badge>
@@ -166,7 +180,7 @@ class GreetingComponent extends React.Component {
                                }}>
                                 settings
                             </i>
-                            {" "} Settings</ListGroupItem>
+                            {" "} Options</ListGroupItem>
                     </ListGroup>
 
 
@@ -175,7 +189,7 @@ class GreetingComponent extends React.Component {
                     href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A9SKZXCDEEASW'
                     target='_blank' style={{textDecoration: 'none', color: '#007bff'}}>
 
-                    You like the addon ? Buy a ☕ to the developer
+                    {localize("label_popup_make_donation")}
                 </a>
                 </div>
 

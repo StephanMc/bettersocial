@@ -13,8 +13,6 @@ const requireLoader = {
     util: () => require("../js/Util").default,
 };
 
-// console.log({SettingsManager})
-
 // Defined only in this scope and not in global object scope
 
 const BUILD_VERSION = chrome.app.getDetails().version; // Version in manifest
@@ -83,14 +81,11 @@ export const FacefontBg = {
         this.getNotificationsManager().initNotificationIcon();
         this.getNotificationsManager().runNotificationProcess();
 
-        console.log("startup finished")
     },
 
     installMessageListener: function () {
         const _that = this;
         let notificationsManager = this.getNotificationsManager();
-        console.log("notificationsManagerrrr", notificationsManager)
-        console.log("NotifiNotificationsManager", notificationsManager.getDefaultAudioURL())
         // Request Listener
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             switch (request.wish) {
