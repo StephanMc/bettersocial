@@ -1,16 +1,48 @@
 {
-  "name": "Chrome Extension Webpack",
-  "options_page": "options.html",
+  "description": "__MSG_extension_brief_description__",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "version" :"9.0",
   "background": {
     "page": "background.html"
   },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_icon": "icon-34.png"
+    "default_icon": "icon-32.png"
   },
   "icons": {
-    "128": "icon-128.png"
+    "128": "icon-128.png",
+    "48": "icon-48.png",
+    "16": "icon-16.png"
   },
   "manifest_version": 2,
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "name": "__MSG_extension_full_name__",
+  "permissions": [
+    "unlimitedStorage",
+    "storage",
+    "notifications",
+    "tabs",
+    "http://*.facebook.com/*",
+    "https://*.facebook.com/*"
+  ],
+  "default_locale": "en",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ssl.google-analytics.com; object-src 'self'",
+  "web_accessible_resources": [
+    "*.js",
+    "*.css"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.facebook.com/*",
+        "https://*.facebook.com/*"
+      ],
+      "js": [
+        "facefont_cs.bundle.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
 }

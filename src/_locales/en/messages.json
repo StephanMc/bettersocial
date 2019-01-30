@@ -1,0 +1,191 @@
+{
+  "extension_brief_description": {
+    "message": "Beautify your Facebook posts, receive your Facebook notifications instantly in your browser, play with status sizes and more."
+  },
+  "extension_full_name": {
+    "message": "Facefont : Facebook fonts & Alerts"
+  },
+  "about_title": {
+    "message": "About"
+  },
+  "about_description": {
+    "message": "Facefont is made with ❤, with the hope to make better your daily usage of Facebook."
+  },
+  "about_bug_found": {
+    "message": "Found a bug ? Cool! You can quickly report to the below email address, I will hasten to correct ;-) <br />"
+  },
+  "label_donations": {
+    "message": "Donations"
+  },
+  "label_button_donate": {
+    "message": "Make a donation"
+  },
+  "make_donation": {
+    "message": "If you like my work and want to encourage me, your donation will be very appreciated "
+  },
+  "label_questions": {
+    "message": "Questions / bug report"
+  },
+  "text_questions": {
+    "message": "For any question or bug report, feel free to contact me: "
+  },
+  "label_privacy": {
+    "message": "Privacy"
+  },
+  "text_privacy_button": {
+    "message": "Terms of use"
+  },
+  "options_header_description": {
+    "message": "Beautify your Facebook posts, receive your notifications instantly in your browser, and more. "
+  },
+  "label_popup_make_donation": {
+    "message": "You like Facefont ? Buy a ☕ to the developer!"
+  },
+  "label_about": {
+    "message": "About FaceFont"
+  },
+  "label_by": {
+    "message": "By St&eacute;phane Kouadio : stephan.kouadio@gmail.com"
+  },
+  "label_popup_notificationsOnFB": {
+    "message": "Notifications on Facebook"
+  },
+  "label_ff_options": {
+    "message": "Settings"
+  },
+  "label_close": {
+    "message": "Close"
+  },
+  "label_play_button": {
+    "message": "Play"
+  },
+  "label_menu": {
+    "message": "Menu"
+  },
+  "label_general_options": {
+    "message": "General Options"
+  },
+  "label_enableFaceFont": {
+    "message": "Enable Facefont"
+  },
+  "label_font_theme": {
+    "message": "Font Theme"
+  },
+  "label_font_size": {
+    "message": "Size"
+  },
+  "label_font_size_default": {
+    "message": "(default is 14)"
+  },
+  "label_font_by_default": {
+    "message": "By default"
+  },
+  "label_facebook_posts": {
+    "message": "Facebook posts"
+  },
+  "popup_fonts_help": {
+    "message": "These will be applied to Facebook posts"
+  },
+  "label_options": {
+    "message": "Options"
+  },
+  "label_textSize": {
+    "message": "Change the text size (14 by default): "
+  },
+  "label_textpreview": {
+    "message": "Don't trust anything you see. Even salt look like sugar "
+  },
+  "label_preview": {
+    "message": "Preview:"
+  },
+  "label_smileys": {
+    "message": "Smileys (emoticons)"
+  },
+  "label_enablesmileysTA": {
+    "message": "Propose me smileys when I write a Facebook status"
+  },
+  "label_notifications": {
+    "message": "Notifications"
+  },
+  "label_enableNotifications": {
+    "message": "Enable Facebook notifications"
+  },
+  "label_enableAudio": {
+    "message": "Enable notifications sound"
+  },
+  "notifications_description": {
+    "message": "If you activate this, you will be instantly notified when you'll receive a notification on Facebook"
+  },
+  "label_btn_close": {
+    "message": "  Close  "
+  },
+  "label_small_about": {
+    "message": "About... <br />"
+  },
+  "label_popup_options": {
+    "message": "Options..."
+  },
+  "label_please_refresh": {
+    "message": "Please refresh Facebook page to apply changes."
+  },
+  "FF_NAN": {
+    "message": "Not a number."
+  },
+  "msgRefresh": {
+    "message": "Please refresh Facebook page to apply smiley disabling."
+  },
+  "msgRefreshGeneric": {
+    "message": "Please refresh Facebook page to apply changes."
+  },
+  "msgToolsFF": {
+    "message": "You can find FaceFont here : Tools menu --> FaceFont"
+  },
+  "previewText": {
+    "message": "Happy birthday"
+  },
+  "notifDisabled": {
+    "message": "Notifications disabled"
+  },
+  "CONTEXTMENU_NOTIF_ON_FB_ONE": {
+    "message": "notification on Facebook"
+  },
+  "CONTEXTMENU_NOTIF_ON_FB_MANY": {
+    "message": "notifications on Facebook"
+  },
+  "CONTEXTMENU_NOTIF_ON_FB_NONE": {
+    "message": "No notification sur Facebook"
+  },
+  "NOTIFPOPUP_ALL_TITLE_MANY": {
+    "message": "new notifications"
+  },
+  "NOTIFPOPUP_ALL_TITLE_ONE": {
+    "message": "new notification"
+  },
+  "NOTIFPOPUP_ALL_YOU_HAVE": {
+    "message": "You have"
+  },
+  "NOTIFPOPUP_ALL_NOTIFS_ON_FB_MANY": {
+    "message": "notifications on Facebook"
+  },
+  "NOTIFPOPUP_ALL_NOTIFS_ON_FB_ONE": {
+    "message": "notification on Facebook"
+  },
+  "NOTIFPOPUP_NOALL_TITLE": {
+    "message": "FaceFont"
+  },
+  "NOTIFPOPUP_NOALL_NEWNOTIF_OF": {
+    "message": "New notification of"
+  },
+  "NOTIFPOPUP_NOALL_NEWMSG_OF": {
+    "message": "New message from"
+  },
+  "NOTIFPOPUP_NOALL_NEWREQUEST": {
+    "message": "ask you as friend"
+  },
+  "TOAST_MESSAGE_SMILEY_COPIED": {
+    "message": "Now just paste it (Ctrl+V) in your status."
+  },
+  "TOAST_MESSAGE_SMILEY_COPIED_TITLE": {
+    "message": "Emoticon copied!"
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "extension_brief_description": {
+    "message": "Embellissez vos publications Facebook, recevez vos notifications Facebook directement dans Chrome, et bien plus."
+  },
+  "extension_full_name": {
+    "message": "Facefont: Polices Facebook & Notifications"
+  },
+  "about_title": {
+    "message": "À propos"
+  },
+  "about_description": {
+    "message": "Facefont a été fait avec le ❤, dans l'espoir de rendre meilleure votre utilisation quotidienne de Facebook."
+  },
+  "about_bug_found": {
+    "message": "Vous avez trouvé un bug ? Ecrivez moi simplement à l'adresse mail ci-dessous, je me hâterai de le corriger :) <br />"
+  },
+  "label_donations": {
+    "message": "Faire un don"
+  },
+  "label_button_donate": {
+    "message": "Faire un don"
+  },
+  "make_donation": {
+    "message": "Si vous aimez mon travail et souhaitez m'encourager, votre don sera très apprécié "
+  },
+  "label_questions": {
+    "message": "Questions / report de bugs"
+  },
+  "text_questions": {
+    "message": "Pour toute question ou report de bug, n'hésitez pas à me contacter: "
+  },
+  "label_privacy": {
+    "message": "Confidentialité"
+  },
+  "text_privacy_button": {
+    "message": "Conditions d'utilisation"
+  },
+  "options_header_description": {
+    "message": "Embellissez vos publications Facebook, recevez vos notifications Facebook directement dans Chrome, et bien plus."
+  },
+  "label_popup_make_donation": {
+    "message": "Vous aimez Facefont ? Payez un ☕ au développeur!"
+  },
+  "label_about": {
+    "message": "A propos de FaceFont"
+  },
+  "label_by": {
+    "message": "Par St&eacute;phane Kouadio : stephan.kouadio@gmail.com"
+  },
+  "label_popup_notificationsOnFB": {
+    "message": "Notifications sur Facebook"
+  },
+  "label_ff_options": {
+    "message": "Options"
+  },
+  "label_close": {
+    "message": "Fermer"
+  },
+  "label_play_button": {
+    "message": "Jouer"
+  },
+  "label_menu": {
+    "message": "Menu"
+  },
+  "label_general_options": {
+    "message": "Options g&eacute;n&eacute;rales"
+  },
+  "label_enableFaceFont": {
+    "message": "Activer Facefont"
+  },
+  "label_font_theme": {
+    "message": "Style de police"
+  },
+  "label_font_size": {
+    "message": "Taille"
+  },
+  "label_font_size_default": {
+    "message": "(14 par défaut)"
+  },
+  "label_font_by_default": {
+    "message": "Par défaut"
+  },
+  "label_facebook_posts": {
+    "message": "Publications Facebook"
+  },
+  "popup_fonts_help": {
+    "message": "Cela s'appliquera aux statuts Facebook"
+  },
+  "label_options": {
+    "message": "Options"
+  },
+  "label_textSize": {
+    "message": "Modifier la taille du texte (14 par défaut): "
+  },
+  "label_textpreview": {
+    "message": "Ne croyez pas tout ce que vous voyez. Même le sel ressemble au sucre "
+  },
+  "label_preview": {
+    "message": "Aperçu:"
+  },
+  "label_smileys": {
+    "message": "Smileys (&eacute;moticones)"
+  },
+  "label_enablesmileysTA": {
+    "message": "Me proposer des smileys lorsque j'écris un statut Facebook"
+  },
+  "label_notifications": {
+    "message": "Notifications"
+  },
+  "label_enableNotifications": {
+    "message": "Activer les notifications Facebook"
+  },
+  "label_enableAudio": {
+    "message": "Activer les sons de notifications"
+  },
+  "notifications_description": {
+    "message": "En activant ceci, vous serez notifié(e) à l'arrivée de notifications Facebook."
+  },
+  "label_btn_close": {
+    "message": "  Fermer  "
+  },
+  "label_small_about": {
+    "message": "A propos ... <br />"
+  },
+  "label_popup_options": {
+    "message": "Options..."
+  },
+  "label_please_refresh": {
+    "message": "Actualisez la page Facebook pour appliquer les changements."
+  },
+  "FF_NAN": {
+    "message": "Ceci n'est pas un nombre."
+  },
+  "msgRefresh": {
+    "message": "Veuillez ré-actualiser la page Facebook \npour que la désactivation des smileys prenne effet."
+  },
+  "msgRefreshGeneric": {
+    "message": "Actualisez la page Facebook pour appliquer les changements."
+  },
+  "msgToolsFF": {
+    "message": "Vous pourrez retrouver FaceFont ici : Menu Outils --> FaceFont"
+  },
+  "previewText": {
+    "message": "Joyeux anniversaire"
+  },
+  "notifDisabled": {
+    "message": "Notifications désactivées"
+  },
+  "CONTEXTMENU_NOTIF_ON_FB_ONE": {
+    "message": "notification sur Facebook"
+  },
+  "CONTEXTMENU_NOTIF_ON_FB_MANY": {
+    "message": "notifications sur Facebook"
+  },
+  "CONTEXTMENU_NOTIF_ON_FB_NONE": {
+    "message": "Aucune notification sur Facebook"
+  },
+  "NOTIFPOPUP_ALL_TITLE_ONE": {
+    "message": "nouvelle notification"
+  },
+  "NOTIFPOPUP_ALL_TITLE_MANY": {
+    "message": "nouvelles notifications"
+  },
+  "NOTIFPOPUP_ALL_YOU_HAVE": {
+    "message": "Vous avez"
+  },
+  "NOTIFPOPUP_ALL_NOTIFS_ON_FB_ONE": {
+    "message": "notification sur Facebook"
+  },
+  "NOTIFPOPUP_ALL_NOTIFS_ON_FB_MANY": {
+    "message": "notifications sur Facebook"
+  },
+  "NOTIFPOPUP_NOALL_TITLE": {
+    "message": "FaceFont"
+  },
+  "NOTIFPOPUP_NOALL_NEWNOTIF_OF": {
+    "message": "Nouvelle notification de"
+  },
+  "NOTIFPOPUP_NOALL_NEWMSG_OF": {
+    "message": "Nouveau message de"
+  },
+  "NOTIFPOPUP_NOALL_NEWREQUEST": {
+    "message": "vous demande en ami"
+  },
+  "TOAST_MESSAGE_SMILEY_COPIED_TITLE": {
+    "message": "Emoticône copiée!"
+  },
+  "TOAST_MESSAGE_SMILEY_COPIED": {
+    "message": "Collez-la maintenant (Ctrl+V) dans votre statut."
+  }
+}

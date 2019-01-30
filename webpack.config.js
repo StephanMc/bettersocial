@@ -22,11 +22,18 @@ var options = {
   entry: {
     popup: path.join(__dirname, "src", "js", "popup.js"),
     options: path.join(__dirname, "src", "js", "options.js"),
-    background: path.join(__dirname, "src", "js", "background.js")
+    background: path.join(__dirname, "src", "js", "background.js"),
+    facefont_cs: path.join(__dirname, "src", "js", "facefont_cs.js"),
+    // notification: path.join(__dirname, "src", "js", "notification.js")
+  },
+  chromeExtensionBoilerplate: {
+    notHotReload: ["facefont_cs"]
   },
   output: {
     path: path.join(__dirname, "build"),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
+    hotUpdateChunkFilename: 'hot/hot-update.js',
+    hotUpdateMainFilename: 'hot/hot-update.json'
   },
   module: {
     rules: [
@@ -44,11 +51,17 @@ var options = {
         test: /\.html$/,
         loader: "html-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.(js|jsx)$/,
+        loader: "babel-loader",
+        exclude: /node_modules/
       }
     ]
   },
   resolve: {
-    alias: alias
+    alias: alias,
+    extensions: fileExtensions.map(extension => ("." + extension)).concat([".jsx", ".js", ".css"])
   },
   plugins: [
     // clean the build folder
@@ -67,7 +80,15 @@ var options = {
           ...JSON.parse(content.toString())
         }))
       }
-    }]),
+    },
+        {
+            from: "src/_locales", to: "_locales/"
+        },{
+            from: "src/default.mp3"
+        },{
+            from: "src/js/notification.js"
+        }
+    ]),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "popup.html"),
       filename: "popup.html",
@@ -83,7 +104,9 @@ var options = {
       filename: "background.html",
       chunks: ["background"]
     }),
-    new WriteFilePlugin()
+    new WriteFilePlugin(),
+
+    new CleanWebpackPlugin(["build/*hot-update*"]),
   ]
 };
 
