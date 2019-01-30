@@ -1,21 +1,42 @@
 {
   "extension_brief_description": {
-    "message": "Recevez vos notifications Facebook directement dans Chrome, et bien plus."
+    "message": "Embellissez vos publications Facebook, recevez vos notifications Facebook directement dans Chrome, et bien plus."
   },
   "extension_full_name": {
-    "message": "Facefont : Notifications Facebook"
+    "message": "Facefont: Polices Facebook & Notifications"
   },
   "about_title": {
-    "message": "A propos de FaceFont..."
+    "message": "À propos"
   },
   "about_description": {
-    "message": "Merci d'avoir installé FaceFont ! Cette extension souhaite rendre meilleure votre utilisation quotidienne de Facebook. <br />"
+    "message": "Facefont a été fait avec le ❤, dans l'espoir de rendre meilleure votre utilisation quotidienne de Facebook."
   },
   "about_bug_found": {
     "message": "Vous avez trouvé un bug ? Ecrivez moi simplement à l'adresse mail ci-dessous, je me hâterai de le corriger :) <br />"
   },
+  "label_donations": {
+    "message": "Faire un don"
+  },
+  "label_button_donate": {
+    "message": "Faire un don"
+  },
   "make_donation": {
-    "message": "<b>Vous souhaiteriez aider le développeur ? Cool!</b> Vous pouvez librement <a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A9SKZXCDEEASW' class='donation_link' target='_blank'>faire un don</a>, cela me fera beaucoup plaisir :) <br />"
+    "message": "Si vous aimez mon travail et souhaitez m'encourager, votre don sera très apprécié "
+  },
+  "label_questions": {
+    "message": "Questions / report de bugs"
+  },
+  "text_questions": {
+    "message": "Pour toute question ou report de bug, n'hésitez pas à me contacter: "
+  },
+  "label_privacy": {
+    "message": "Confidentialité"
+  },
+  "text_privacy_button": {
+    "message": "Conditions d'utilisation"
+  },
+  "options_header_description": {
+    "message": "Embellissez vos publications Facebook, recevez vos notifications Facebook directement dans Chrome, et bien plus."
   },
   "label_popup_make_donation": {
     "message": "Vous aimez Facefont ? Payez un ☕ au développeur!"
@@ -30,10 +51,13 @@
     "message": "Notifications sur Facebook"
   },
   "label_ff_options": {
-    "message": "Options FaceFont"
+    "message": "Options"
   },
   "label_close": {
     "message": "Fermer"
+  },
+  "label_play_button": {
+    "message": "Jouer"
   },
   "label_menu": {
     "message": "Menu"
@@ -50,8 +74,14 @@
   "label_font_size": {
     "message": "Taille"
   },
+  "label_font_size_default": {
+    "message": "(14 par défaut)"
+  },
   "label_font_by_default": {
     "message": "Par défaut"
+  },
+  "label_facebook_posts": {
+    "message": "Publications Facebook"
   },
   "popup_fonts_help": {
     "message": "Cela s'appliquera aux statuts Facebook"
@@ -63,7 +93,10 @@
     "message": "Modifier la taille du texte (14 par défaut): "
   },
   "label_textpreview": {
-    "message": "Ceci est un aper&ccedil;u de statut "
+    "message": "Ne croyez pas tout ce que vous voyez. Même le sel ressemble au sucre "
+  },
+  "label_preview": {
+    "message": "Aperçu:"
   },
   "label_smileys": {
     "message": "Smileys (&eacute;moticones)"
@@ -75,7 +108,7 @@
     "message": "Notifications"
   },
   "label_enableNotifications": {
-    "message": "Activer les notifications"
+    "message": "Activer les notifications Facebook"
   },
   "label_enableAudio": {
     "message": "Activer les sons de notifications"

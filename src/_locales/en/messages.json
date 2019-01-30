@@ -1,21 +1,42 @@
 {
   "extension_brief_description": {
-    "message": "Receive your Facebook notifications instantly in your browser, play with status sizes and more."
+    "message": "Beautify your Facebook posts, receive your Facebook notifications instantly in your browser, play with status sizes and more."
   },
   "extension_full_name": {
-    "message": "Facefont : Get Facebook Alerts"
+    "message": "Facefont : Facebook fonts & Alerts"
   },
   "about_title": {
-    "message": "About FaceFont..."
+    "message": "About"
   },
   "about_description": {
-    "message": "Thank you for installing FaceFont! This extension aims to make better your daily usage of Facebook<br />"
+    "message": "Facefont is made with ❤, with the hope to make better your daily usage of Facebook."
   },
   "about_bug_found": {
     "message": "Found a bug ? Cool! You can quickly report to the below email address, I will hasten to correct ;-) <br />"
   },
+  "label_donations": {
+    "message": "Donations"
+  },
+  "label_button_donate": {
+    "message": "Make a donation"
+  },
   "make_donation": {
-    "message": "<b>Wanna help the developer ? Great!</b> You can freely <a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A9SKZXCDEEASW' target='_blank' class='donation_link'>make a donation</a>, it will really make me happy :) <br />"
+    "message": "If you like my work and want to encourage me, your donation will be very appreciated "
+  },
+  "label_questions": {
+    "message": "Questions / bug report"
+  },
+  "text_questions": {
+    "message": "For any question or bug report, feel free to contact me: "
+  },
+  "label_privacy": {
+    "message": "Privacy"
+  },
+  "text_privacy_button": {
+    "message": "Terms of use"
+  },
+  "options_header_description": {
+    "message": "Beautify your Facebook posts, receive your notifications instantly in your browser, and more. "
   },
   "label_popup_make_donation": {
     "message": "You like Facefont ? Buy a ☕ to the developer!"
@@ -30,10 +51,13 @@
     "message": "Notifications on Facebook"
   },
   "label_ff_options": {
-    "message": "FaceFont Settings"
+    "message": "Settings"
   },
   "label_close": {
     "message": "Close"
+  },
+  "label_play_button": {
+    "message": "Play"
   },
   "label_menu": {
     "message": "Menu"
@@ -50,8 +74,14 @@
   "label_font_size": {
     "message": "Size"
   },
+  "label_font_size_default": {
+    "message": "(default is 14)"
+  },
   "label_font_by_default": {
     "message": "By default"
+  },
+  "label_facebook_posts": {
+    "message": "Facebook posts"
   },
   "popup_fonts_help": {
     "message": "These will be applied to Facebook posts"
@@ -63,7 +93,10 @@
     "message": "Change the text size (14 by default): "
   },
   "label_textpreview": {
-    "message": "This is a sample Facebook status "
+    "message": "Don't trust anything you see. Even salt look like sugar "
+  },
+  "label_preview": {
+    "message": "Preview:"
   },
   "label_smileys": {
     "message": "Smileys (emoticons)"
@@ -75,7 +108,7 @@
     "message": "Notifications"
   },
   "label_enableNotifications": {
-    "message": "Enable notifications"
+    "message": "Enable Facebook notifications"
   },
   "label_enableAudio": {
     "message": "Enable notifications sound"

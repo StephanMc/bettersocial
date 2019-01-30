@@ -8,10 +8,14 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Icon from '@material-ui/core/Icon';
+import Util from "../Util";
+import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
+import TermsOfUse from "./TermsOfUse";
 
 const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager()
 const notificationManager = () => chrome.extension.getBackgroundPage().requireLoader.notificationsManager()
 const appVersion = chrome.runtime.getManifest().version;
+const localize = Util.localize;
 
 class SettingsView extends React.Component {
 
@@ -24,8 +28,16 @@ class SettingsView extends React.Component {
             collapse: true,
             textSize: settingsManager().getPreference("textSize") || 14,
             useNotif: !!settingsManager().getPreference("useNotif"),
-            enableAudio: !!settingsManager().getPreference("enableAudio")
+            enableAudio: !!settingsManager().getPreference("enableAudio"),
+
+            modal: false
         }
+    }
+
+    toggle = () => {
+        this.setState({
+            modal: !this.state.modal
+        });
     }
 
     handleChangeFontFamily = event => {
@@ -88,15 +100,14 @@ class SettingsView extends React.Component {
                             Facefont
                         </h1>
                         <p className="lead">
-                            Give a style to your Facebook posts, receive your Facebook notifications instantly in your
-                            browser, and more. <br/>
+                            {localize("extension_brief_description")}<br/>
 
                         </p>
                     </div>
 
 
                     <h3 className="mt-5">
-                        <span style={{marginRight: 10}}>Settings</span>
+                        <span style={{marginRight: 10}}>{localize("label_ff_options")}</span>
                     </h3>
                     <div className="card">
                         <div className="card-body">
@@ -110,18 +121,18 @@ class SettingsView extends React.Component {
                                             value="enableFacefont"
                                         />
                                     }
-                                    label={<h6 style={{marginTop: 9}}>Enable Facefont</h6>}
+                                    label={<h6 style={{marginTop: 9}}>{localize("label_enableFaceFont")}</h6>}
                                 />
                             </div>
 
 
-                            <h6>Facebook posts</h6>
+                            <h6>{localize("label_facebook_posts")}</h6>
                             <div className="ml-4">
                                 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline'}}>
                                     <div style={{marginRight: '0px', width: '90%'}}>
 
                                 <span
-                                    style={{color: 'gray', fontSize: 11}}>Font Theme</span><br/>
+                                    style={{color: 'gray', fontSize: 11}}>{localize("label_font_theme")}</span><br/>
                                         <FormControl style={{width: 'inherit'}}>
                                             <Select
                                                 value={this.state.fontFamily}
@@ -131,7 +142,7 @@ class SettingsView extends React.Component {
                                                 name="fontFamily"
                                             >
                                                 <MenuItem value="">
-                                                    <em>By default</em>
+                                                    <em>{localize("label_font_by_default")}</em>
                                                 </MenuItem>
                                                 {settingsManager().getSafeWebFonts().map((font, index) =>
                                                     <MenuItem key={"font" + index} value={font.family}
@@ -141,7 +152,10 @@ class SettingsView extends React.Component {
                                         </FormControl>
                                     </div>
                                     <div style={{width: 111}}>
-                                        <span style={{color: 'gray', fontSize: 11}}>Size (default is 14)</span>
+                                        <span style={{
+                                            color: 'gray',
+                                            fontSize: 11
+                                        }}>{localize("label_font_size")} {localize("label_font_size_default")}</span>
                                         <br/>
                                         <Input
                                             placeholder="Size"
@@ -162,12 +176,12 @@ class SettingsView extends React.Component {
                                     </div>
                                 </div>
                                 <br/>
-                                <small>Preview:</small>
+                                <small>{localize("label_preview")}</small>
                                 <br/>
                                 <div className="ml-4">
 
                                     <div style={stylePreview}>
-                                        Don't trust anything you see. Even salt look like sugar
+                                        {localize("label_textpreview")}
                                     </div>
 
                                 </div>
@@ -186,7 +200,7 @@ class SettingsView extends React.Component {
                                                 value="useNotif"
                                             />
                                         }
-                                        label={"Enable Facebook notifications"}
+                                        label={localize("label_enableNotifications")}
                                     />
                                 </div>
                                 <div>
@@ -207,7 +221,8 @@ class SettingsView extends React.Component {
                                             style={{padding: '3px 7px', marginTop: -10}}
                                             disabled={!this.state.enableFacefont}
                                             onClick={() => notificationManager().doPlay()}>
-                                        <Icon style={{fontSize: 25}}>play_arrow_icon</Icon> Preview
+                                        <Icon
+                                            style={{fontSize: 25}}>play_arrow_icon</Icon> {localize("label_play_button")}
                                     </Button>
 
                                 </div>
@@ -217,47 +232,57 @@ class SettingsView extends React.Component {
                     </div>
 
                     <h3 className="mt-5">
-                        <span style={{marginRight: 10}}>About</span>
+                        <span style={{marginRight: 10}}>{localize("about_title")}</span>
                     </h3>
                     <div className="card">
                         <div className="card-body">
                             <div className="ml-4">
-                                Facefont is made with ❤, with the hope to make better your daily usage of Facebook.<br/>
+                                {localize("about_description")}<br/>
 
                             </div>
                             <br/>
 
-                            <h6>Donations</h6>
+                            <h6>{localize("label_donations")}</h6>
                             <div className="ml-4">
-                                If you like my work and want to encourage me, your donation will be very appreciated
-                                😍<br/>
+                                {localize("make_donation")} 😍
+                                <br/>
                                 <a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A9SKZXCDEEASW'
                                    target='_blank' style={{textDecoration: 'none'}}>
-                                    <Button style={{textTransform: 'none'}} color={"secondary"}>Make a donation
-                                        💛 </Button>
+                                    <Button variant={"contained"} style={{textTransform: 'none'}}
+                                            color={"secondary"}>{localize("label_button_donate")}
+                                        {" "} 💛 </Button>
                                 </a>
 
                             </div>
 
                             <br/>
                             <hr/>
-                            <h6>Questions or bug report</h6>
+                            <h6>{localize("label_questions")}</h6>
                             <div className="ml-4">
-                                For any question or bug report, feel free to contact me: <a
+                                {localize("text_questions")}<a
                                 href={"mailto:stephan.kouadio@gmail.com"}>stephan.kouadio@gmail.com</a>
 
                             </div>
                             <br/>
 
-                            <h6>Privacy</h6>
+                            <h6>{localize("label_privacy")}</h6>
                             <div className="ml-4">
-                                Facefont does not collect any user or browser data.
+                                <Button variant={"text"} onClick={this.toggle}>{localize("text_privacy_button")}</Button>
+                                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                                    <ModalHeader toggle={this.toggle}>Privacy</ModalHeader>
+                                    <ModalBody >
+                                        <TermsOfUse/>
+                                    </ModalBody>
+                                    <ModalFooter>
+                                        <Button color="primary" onClick={this.toggle}>Close</Button>{' '}
+                                    </ModalFooter>
+                                </Modal>
                             </div>
 
                         </div>
                     </div>
 
-                    <br/><br/><br/><br/>
+                    <br/>
                 </main>
 
                 <footer className="footer">
