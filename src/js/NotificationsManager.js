@@ -140,7 +140,7 @@ class NotificationsManager {
             requestCounter = 0;
         try {
             var parser = new DOMParser();
-            var mdoc = parser.parseFromString(objResponse.xhrResponseText, "text/html");
+            var mdoc = parser.parseFromString(objResponse.xhrResponseText.replace(/<!--/g, "").replace(/-->/g, ""), "text/html");
 
             // Notifs
             var alls = mdoc.getElementById("notifications_jewel");
@@ -170,41 +170,37 @@ class NotificationsManager {
         var notificationBundle = this.notificationBundle;
         var totalNotif = notifCounter + msgCounter + requestCounter;
 
-        if (this.firstPopupHasRun == false) {
-            this.firstPopupHasRun = true;
-
-            Util.checkIsOnFacebook(isOnFacebook => {
-                if (!isOnFacebook) {
-                    this.doPopupNewNotificationsCount(totalNotif);
-                }
-            });
-            // (FIXME) Removing next line will do this behavior : after notif of "all" (doNewNotif()),
-            // will be popup-ed again the latest notification. By adding this below, there will be not
-            // second notification
-
-            //FacefontBg.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);
-
-            // setTimeout(function() {
-            //     FacefontBg.isFirstTimeNotifCalled = false;
-            // }, 10000);
-        } else {
-            let stringText = null;
-            stringText = this.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);
-
-            if (stringText != null) {
-                Util.checkIsOnFacebook(isOnFacebook => {
-                    if (!isOnFacebook) {
-                        this.doPopup(
-                            Util.localize("NOTIFPOPUP_NOALL_TITLE"),
-                            stringText,
-                            true,
-                            "https://www.facebook.com"
-                        );
-
-                    }
-                });
+        Util.checkIsOnFacebook(isOnFacebook => {
+            if (isOnFacebook) {
+                return;
             }
-        }
+
+            if (!this.firstPopupHasRun) {
+                this.firstPopupHasRun = true;
+
+                this.doPopupNewNotificationsCount(totalNotif);
+                // (FIXME) Removing next line will do this behavior : after notif of "all" (doNewNotif()),
+                // will be popup-ed again the latest notification. By adding this below, there will be not
+                // second notification
+
+                this.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);
+
+                // setTimeout(function() {
+                //     FacefontBg.isFirstTimeNotifCalled = false;
+                // }, 10000);
+            } else {
+                let stringText;
+                stringText = this.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);
+                if (stringText != null) {
+                    this.doPopup(
+                        Util.localize("NOTIFPOPUP_NOALL_TITLE"),
+                        stringText,
+                        true,
+                        "https://www.facebook.com"
+                    );
+                }
+            }
+        });
     }
 
     doPopupNewNotificationsCount(totalNotif) {
@@ -243,9 +239,8 @@ class NotificationsManager {
         let stringText = "";
         // Notifs
         if (notifCounter > 0) {
-            alls = mdoc.querySelector('#notifications_jewel div ol[data-sigil="contents"] li[data-sigil] div');
+            alls = mdoc.querySelector('li[data-sigil="notification marea"]');
             if (alls != null) {
-                alls = alls.parentNode;
                 const fill = alls.querySelector(".blueName") !== null && notificationBundle.lastNotifId !== alls.id;
                 if (fill) {
                     notificationBundle.lastNotifId = alls.id;
