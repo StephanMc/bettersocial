@@ -1,6 +1,4 @@
-// import 'semantic-ui-css/semantic.min.css'
 // import "reactstrap/dist/"
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "../css/bootstrap.min.css"
 import "../css/popup.css";
