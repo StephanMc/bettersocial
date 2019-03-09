@@ -17,7 +17,7 @@ const requireLoader = {
 
 // Defined only in this scope and not in global object scope
 
-const BUILD_VERSION = chrome.app.getDetails().version; // Version in manifest
+const BUILD_VERSION = chrome.runtime.getManifest().version; // Version in manifest
 
 export const FacefontBg = {
 
