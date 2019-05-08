@@ -6,7 +6,7 @@ class SettingsManager {
     availableFonts = {
         safeWeb: [
             {title: "Dark", family: '"Arial Black", Gadget, sans-serif'},
-            {title: "Comic", family: '"Comic Sans MS", cursive, sans-serif'},
+            {title: "Funny", family: '"Comic Sans MS", cursive, sans-serif'},
             {title: "Lucida", family: '"Lucida Sans Unicode", "Lucida Grande", sans-serif'},
             {title: "Coder", family: '"Courier New", Courier, monospace'},
             {title: "Geek", family: '"Lucida Console", Monaco, monospace'},
