@@ -4,7 +4,7 @@
     "page": "options.html",
     "open_in_tab": true
   },
-  "version" :"9.1",
+  "version" :"9.1.1",
   "background": {
     "page": "background.html"
   },
