@@ -107,7 +107,7 @@ var options = {
     }),
     new WriteFilePlugin(),
 
-    new CleanWebpackPlugin(["build/*hot-update*"]),
+    new CleanWebpackPlugin({cleanOnceBeforeBuildPatterns: ["build/*hot-update*"]}),
   ]
 };
 
