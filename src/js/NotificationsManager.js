@@ -20,7 +20,6 @@ class NotificationsManager {
     firstPopupHasRun = false;
     onNotificationClickUrl = "https://www.facebook.com";
 
-    BUILD_VERSION = chrome.app.getDetails().version; // Version in manifest
     DEFAULT_MUSIC_URL = chrome.extension.getURL("/default.mp3");
 
     // getJSDir() {
