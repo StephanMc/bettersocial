@@ -4,7 +4,7 @@
     "page": "options.html",
     "open_in_tab": true
   },
-  "version" :"9.1.1",
+  "version" :"10.0",
   "background": {
     "page": "background.html"
   },
@@ -24,7 +24,6 @@
     "storage",
     "notifications",
     "tabs",
-    "http://*.facebook.com/*",
     "https://*.facebook.com/*"
   ],
   "default_locale": "en",

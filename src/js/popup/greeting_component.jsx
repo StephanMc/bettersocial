@@ -68,7 +68,7 @@ class GreetingComponent extends React.Component {
                 }}>
                     <Typography variant="h6" color="inherit" style={{fontWeight: 300}}>
 
-                        Facefont
+                        Better Social
                     </Typography>
 
                 </div>

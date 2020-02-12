@@ -12,8 +12,8 @@ import Util from "../Util";
 import {Modal, ModalBody, ModalFooter, ModalHeader} from 'reactstrap';
 import TermsOfUse from "./TermsOfUse";
 
-const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager()
-const notificationManager = () => chrome.extension.getBackgroundPage().requireLoader.notificationsManager()
+const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager();
+const notificationManager = () => chrome.extension.getBackgroundPage().requireLoader.notificationsManager();
 const appVersion = chrome.runtime.getManifest().version;
 const localize = Util.localize;
 
@@ -38,7 +38,7 @@ class SettingsView extends React.Component {
         this.setState({
             modal: !this.state.modal
         });
-    }
+    };
 
     handleChangeFontFamily = event => {
         const {name, value} = event.target;
@@ -80,7 +80,6 @@ class SettingsView extends React.Component {
 
     render() {
 
-        window.__state = this.state
         const stylePreview = {
             backgroundColor: '#f9f9f9',
             padding: 10,
@@ -90,14 +89,14 @@ class SettingsView extends React.Component {
             fontSize: this.state.textSize + "px"
         };
 
-        const logo = require('../../img/icon-48.png')
+        const logo = require('../../img/icon-48.png');
         return (
             <div>
                 <main role="main" className="container" style={{maxWidth: 800}}>
 
                     <div className="jumbotron text-center">
                         <h1 className="display-5">
-                            Facefont
+                            Better Social
                         </h1>
                         <p className="lead">
                             {localize("extension_brief_description")}<br/>
@@ -287,7 +286,7 @@ class SettingsView extends React.Component {
 
                 <footer className="footer">
                     <div className="container">
-                        <img src={logo}/> {" "} <span className="text-muted">Facefont {appVersion}</span>
+                        <img src={logo}/> {" "} <span className="text-muted">Better Social {appVersion}</span>
                     </div>
                 </footer>
             </div>
