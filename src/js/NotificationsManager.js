@@ -183,10 +183,6 @@ class NotificationsManager {
                 // second notification
 
                 this.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);
-
-                // setTimeout(function() {
-                //     FacefontBg.isFirstTimeNotifCalled = false;
-                // }, 10000);
             } else {
                 let stringText;
                 stringText = this.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);

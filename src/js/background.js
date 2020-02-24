@@ -2,22 +2,14 @@ import '../img/icon-128.png'
 import '../img/icon-32.png'
 import '../img/icon-48.png'
 import '../img/icon-16.png'
-//
 
-
-
-// import NotificationsManager from "../js/NotificationsManager"
-// import SettingsManager from "../js/SettingsManager"
-// const SettingsManager = requireSettingsManager()
 const requireLoader = {
     settingsManager: () => require("../js/SettingsManager").default,
     notificationsManager: () => require("../js/NotificationsManager").default,
     util: () => require("../js/Util").default,
 };
 
-// Defined only in this scope and not in global object scope
-
-const BUILD_VERSION = chrome.runtime.getManifest().version; // Version in manifest
+const BUILD_VERSION = chrome.runtime.getManifest().version;
 
 export const FacefontBg = {
 
@@ -43,36 +35,6 @@ export const FacefontBg = {
     getSettingsManager() {
         return requireLoader.settingsManager()
     },
-
-    // getDefaultAudioURL: function () {
-    //     return DEFAULT_MUSIC_URL;
-    // },
-    /*
-     Callback is called once taburl is got
-    */
-    // getUrlOfTab: function(callback) {
-    //     chrome.tabs.query({ active: true }, function(tabs) {
-    //         if (callback) {
-    //             callback(tabs[0].url);
-    //         }
-    //     });
-    // },
-
-    // getJSDir: function() {
-    //     var rootdir = chrome.extension.getURL("");
-    //     return rootdir + "content/js/";
-    // },
-
-    // checkIsOnFacebook: function(callback) {
-    //     this.getUrlOfTab((urlResult) => {
-    //         callback(/^https?:\/\/.*\.facebook.com\//.test(urlResult));
-    //     });
-    // },
-
-    // openInNewTab: function(url) {
-    //     var newURL = url;
-    //     chrome.tabs.create({ url: newURL });
-    // },
 
     startup: function () {
         // Checks weither it is necessary to inject cs in tabs
@@ -126,7 +88,7 @@ export const FacefontBg = {
 window.FacefontBg = FacefontBg;
 window.requireLoader = requireLoader;
 
-
+//FIXME: Use XHR instead of injecting a script tag
 /**
  * Add your Analytics tracking ID here.
  */
