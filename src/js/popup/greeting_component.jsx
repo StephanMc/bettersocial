@@ -67,8 +67,11 @@ class GreetingComponent extends React.Component {
                     borderRadius: 5
                 }}>
                     <Typography variant="h6" color="inherit" style={{fontWeight: 300}}>
-
                         Better Social
+                    </Typography>
+
+                    <Typography variant="h6" color="inherit" style={{fontWeight: 300, fontSize: '1rem'}}>
+                        {localize("label_ex_facefont")}
                     </Typography>
 
                 </div>

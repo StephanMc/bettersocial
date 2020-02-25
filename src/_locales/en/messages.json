@@ -26,6 +26,9 @@
   "label_questions": {
     "message": "Questions / bug report"
   },
+  "label_ex_facefont": {
+    "message": "(former Facefont)"
+  },
   "text_questions": {
     "message": "For any question or bug report, feel free to contact me: "
   },

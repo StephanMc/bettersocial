@@ -98,6 +98,9 @@ class SettingsView extends React.Component {
                         <h1 className="display-5">
                             Better Social
                         </h1>
+                        <h3 className="display-5" style={{fontWeight: 300}}>
+                            {localize("label_ex_facefont")}
+                        </h3>
                         <p className="lead">
                             {localize("extension_brief_description")}<br/>
 

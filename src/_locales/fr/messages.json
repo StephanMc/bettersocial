@@ -26,6 +26,9 @@
   "label_questions": {
     "message": "Questions / report de bugs"
   },
+  "label_ex_facefont": {
+    "message": "(ex Facefont)"
+  },
   "text_questions": {
     "message": "Pour toute question ou report de bug, n'hésitez pas à me contacter: "
   },
