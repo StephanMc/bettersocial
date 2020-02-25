@@ -88,33 +88,27 @@ export const FacefontBg = {
 window.FacefontBg = FacefontBg;
 window.requireLoader = requireLoader;
 
-//FIXME: Use XHR instead of injecting a script tag
-/**
- * Add your Analytics tracking ID here.
- */
-var _AnalyticsCode = 'UA-133422200-1';
+//FIXME: Addons reviews on Firefox dont allow loading of remote scripts. So i had to experiment their suggestion but it
+//  didnt allow me to have precise informations as I had with the script injection of GA.
+//  I had the same experience like this developer: see https://stackoverflow.com/questions/56743554/better-google-analytics-for-firefox-add-on
+//  So for the moment, I'll disable analytics on Firefox, and will use their inner analytics tool available on
+//  developer console in AMO. A better solution could come in a future.
+if (!window.navigator.userAgent.includes("Firefox")) {
 
+    var _AnalyticsCode = 'UA-133422200-1';
+    var _gaq = _gaq || [];
 
-/**
- * Below is a modified version of the Google Analytics asynchronous tracking
- * code snippet.  It has been modified to pull the HTTPS version of ga.js
- * instead of the default HTTP version.  It is recommended that you use this
- * snippet instead of the standard tracking snippet provided when setting up
- * a Google Analytics account.
- */
-var _gaq = _gaq || [];
-
-_gaq.push(['_setAccount', _AnalyticsCode]);
-_gaq.push(['_trackPageview']);
-window._gaq = _gaq;
-(function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-})();
-
+    _gaq.push(['_setAccount', _AnalyticsCode]);
+    _gaq.push(['_trackPageview']);
+    window._gaq = _gaq;
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+}
 
 FacefontBg.startup();
