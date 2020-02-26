@@ -1,4 +1,4 @@
-# Better Social
+# Better Social (ex Facefont)
 
 An extension to receive Facebook notifications in your browser, and customize Facebook status style.
 
