@@ -18,7 +18,7 @@ class NotificationsManager {
     audioResource = null;
     audioTimer = null;
     firstPopupHasRun = false;
-    onNotificationClickUrl = "https://www.facebook.com";
+    onNotificationClickUrl = "https://www.facebook.com/notifications";
 
     DEFAULT_MUSIC_URL = chrome.extension.getURL("/default.mp3");
 
