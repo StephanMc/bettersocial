@@ -72,13 +72,16 @@ var options = {
     new CopyWebpackPlugin([{
       from: "src/manifest.json",
       transform: function (content, path) {
-        var contentString = process.env.NODE_ENV === "production" ? content.toString().replace("'unsafe-eval'", "") : content.toString()
-
+        let contentString = content.toString();
+        let manifestObject = JSON.parse(contentString);
+        if (process.env.IS_FIREFOX) {
+          delete manifestObject.content_security_policy;
+        }
         // generates the manifest file using the package.json informations
         return Buffer.from(JSON.stringify({
           description: process.env.npm_package_description,
           version: process.env.npm_package_version,
-          ...JSON.parse(contentString)
+          ...manifestObject
         }))
       }
     },
