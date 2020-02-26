@@ -102,7 +102,7 @@ class NotificationsManager {
         const _that = this;
 
         chrome.notifications.onClicked.addListener(notifId => {
-            Util.openInNewTab(_that.onNotificationClickUrl);
+            Util.openOrFocusPage(_that.onNotificationClickUrl, false);
         });
 
         chrome.notifications.onClosed.addListener((notifId, byUser) => {
@@ -189,9 +189,7 @@ class NotificationsManager {
                 if (stringText != null) {
                     this.doPopup(
                         Util.localize("NOTIFPOPUP_NOALL_TITLE"),
-                        stringText,
-                        true,
-                        "https://www.facebook.com"
+                        stringText
                     );
                 }
             }
@@ -210,12 +208,11 @@ class NotificationsManager {
             totalNotif +
             " " +
             Util.localize(totalNotif == 1 ? "NOTIFPOPUP_ALL_NOTIFS_ON_FB_ONE" : "NOTIFPOPUP_ALL_NOTIFS_ON_FB_MANY");
-        this.doPopup(title, text, true, "https://www.facebook.com");
+        this.doPopup(title, text);
     }
 
-    doPopup(title, text, textClickable, urlToClick) {
+    doPopup(title, text) {
 
-        this.onNotificationClickUrl = urlToClick;
         const options = {};
         options.type = "basic";
         options.iconUrl = chrome.extension.getURL("/icon-48.png");
