@@ -1,4 +1,3 @@
-
 const Util = {
     counter: 1,
 
@@ -26,24 +25,29 @@ const Util = {
     },
 
     openInNewTab(url) {
-        chrome.tabs.create({url});
+        chrome.tabs.create({url}, tab => {
+            chrome.windows.update(tab.windowId, {focused: true});
+        });
     },
 
 
-    openOrFocusPage(linkToOpen) {
-        const optionsUrl = linkToOpen;
-
+    openOrFocusPage(linkToOpen, isPopupWindow = true) {
         chrome.tabs.query({lastFocusedWindow: true}, extensionTabs => {
 
             for (let i = 0; i < extensionTabs.length; i++) {
-                if (normalizeUrl(optionsUrl) === normalizeUrl(extensionTabs[i].url)) {
-                    chrome.tabs.update(extensionTabs[i].id, {"selected": true});
-                    window.close();
+                if (normalizeUrl(linkToOpen) === normalizeUrl(extensionTabs[i].url)) {
+                    chrome.windows.update(extensionTabs[i].windowId, {"focused": true}, () => {
+                        chrome.tabs.update(extensionTabs[i].id, {"highlighted": true, "active": true}, (updatedTab) => {
+                        });
+                    });
+
+                    if (isPopupWindow) {
+                        window.close();
+                    }
                     return;
                 }
             }
-
-            chrome.tabs.create({url: optionsUrl});
+            this.openInNewTab(linkToOpen);
         });
     }
 };

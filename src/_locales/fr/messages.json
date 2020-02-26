@@ -3,13 +3,13 @@
     "message": "Recevez vos notifications Facebook directement dans votre navigateur, embellissez vos publications Facebook, et bien plus."
   },
   "extension_full_name": {
-    "message": "Facefont: Notifications Facebook & Polices"
+    "message": "Better Social: Notifications Facebook & Polices"
   },
   "about_title": {
     "message": "À propos"
   },
   "about_description": {
-    "message": "Facefont a été fait avec le ❤, dans l'espoir de rendre meilleure votre utilisation quotidienne de Facebook."
+    "message": "Better Social a été fait avec le ❤, dans l'espoir de rendre meilleure votre utilisation quotidienne de Facebook."
   },
   "about_bug_found": {
     "message": "Vous avez trouvé un bug ? Ecrivez moi simplement à l'adresse mail ci-dessous, je me hâterai de le corriger :) <br />"
@@ -26,6 +26,9 @@
   "label_questions": {
     "message": "Questions / report de bugs"
   },
+  "label_ex_facefont": {
+    "message": "(ex Facefont)"
+  },
   "text_questions": {
     "message": "Pour toute question ou report de bug, n'hésitez pas à me contacter: "
   },
@@ -39,10 +42,10 @@
     "message": "Embellissez vos publications Facebook, recevez vos notifications Facebook directement dans Chrome, et bien plus."
   },
   "label_popup_make_donation": {
-    "message": "Vous aimez Facefont ? Payez un ☕ au développeur!"
+    "message": "Vous aimez Better Social ? Payez un ☕ au développeur!"
   },
   "label_about": {
-    "message": "A propos de FaceFont"
+    "message": "A propos de Better Social"
   },
   "label_by": {
     "message": "Par St&eacute;phane Kouadio : stephan.kouadio@gmail.com"
@@ -66,7 +69,7 @@
     "message": "Options g&eacute;n&eacute;rales"
   },
   "label_enableFaceFont": {
-    "message": "Activer Facefont"
+    "message": "Activer Better Social"
   },
   "label_font_theme": {
     "message": "Style de police"
@@ -138,7 +141,7 @@
     "message": "Actualisez la page Facebook pour appliquer les changements."
   },
   "msgToolsFF": {
-    "message": "Vous pourrez retrouver FaceFont ici : Menu Outils --> FaceFont"
+    "message": "Vous pourrez retrouver Better Social ici : Menu Outils --> FaceFont"
   },
   "previewText": {
     "message": "Joyeux anniversaire"
@@ -171,7 +174,7 @@
     "message": "notifications sur Facebook"
   },
   "NOTIFPOPUP_NOALL_TITLE": {
-    "message": "FaceFont"
+    "message": "Better Social"
   },
   "NOTIFPOPUP_NOALL_NEWNOTIF_OF": {
     "message": "Nouvelle notification de"

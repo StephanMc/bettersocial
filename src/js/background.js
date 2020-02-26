@@ -2,22 +2,14 @@ import '../img/icon-128.png'
 import '../img/icon-32.png'
 import '../img/icon-48.png'
 import '../img/icon-16.png'
-//
 
-
-
-// import NotificationsManager from "../js/NotificationsManager"
-// import SettingsManager from "../js/SettingsManager"
-// const SettingsManager = requireSettingsManager()
 const requireLoader = {
     settingsManager: () => require("../js/SettingsManager").default,
     notificationsManager: () => require("../js/NotificationsManager").default,
     util: () => require("../js/Util").default,
 };
 
-// Defined only in this scope and not in global object scope
-
-const BUILD_VERSION = chrome.runtime.getManifest().version; // Version in manifest
+const BUILD_VERSION = chrome.runtime.getManifest().version;
 
 export const FacefontBg = {
 
@@ -33,7 +25,6 @@ export const FacefontBg = {
     audioTimer: null,
     isFirstTimeNotifCalled: true,
     firstPopupHasRun: false,
-    onNotificationClickUrl: "https://www.facebook.com",
     notificationWorker: null,
 
     getNotificationsManager() {
@@ -43,36 +34,6 @@ export const FacefontBg = {
     getSettingsManager() {
         return requireLoader.settingsManager()
     },
-
-    // getDefaultAudioURL: function () {
-    //     return DEFAULT_MUSIC_URL;
-    // },
-    /*
-     Callback is called once taburl is got
-    */
-    // getUrlOfTab: function(callback) {
-    //     chrome.tabs.query({ active: true }, function(tabs) {
-    //         if (callback) {
-    //             callback(tabs[0].url);
-    //         }
-    //     });
-    // },
-
-    // getJSDir: function() {
-    //     var rootdir = chrome.extension.getURL("");
-    //     return rootdir + "content/js/";
-    // },
-
-    // checkIsOnFacebook: function(callback) {
-    //     this.getUrlOfTab((urlResult) => {
-    //         callback(/^https?:\/\/.*\.facebook.com\//.test(urlResult));
-    //     });
-    // },
-
-    // openInNewTab: function(url) {
-    //     var newURL = url;
-    //     chrome.tabs.create({ url: newURL });
-    // },
 
     startup: function () {
         // Checks weither it is necessary to inject cs in tabs
@@ -126,33 +87,27 @@ export const FacefontBg = {
 window.FacefontBg = FacefontBg;
 window.requireLoader = requireLoader;
 
+//FIXME: Addons reviews on Firefox dont allow loading of remote scripts. So i had to experiment their suggestion but it
+//  didnt allow me to have precise informations as I had with the script injection of GA.
+//  I had the same experience like this developer: see https://stackoverflow.com/questions/56743554/better-google-analytics-for-firefox-add-on
+//  So for the moment, I'll disable analytics on Firefox, and will use their inner analytics tool available on
+//  developer console in AMO. A better solution could come in a future.
+if (!window.navigator.userAgent.includes("Firefox")) {
 
-/**
- * Add your Analytics tracking ID here.
- */
-var _AnalyticsCode = 'UA-133422200-1';
+    var _AnalyticsCode = 'UA-133422200-1';
+    var _gaq = _gaq || [];
 
-
-/**
- * Below is a modified version of the Google Analytics asynchronous tracking
- * code snippet.  It has been modified to pull the HTTPS version of ga.js
- * instead of the default HTTP version.  It is recommended that you use this
- * snippet instead of the standard tracking snippet provided when setting up
- * a Google Analytics account.
- */
-var _gaq = _gaq || [];
-
-_gaq.push(['_setAccount', _AnalyticsCode]);
-_gaq.push(['_trackPageview']);
-window._gaq = _gaq;
-(function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-})();
-
+    _gaq.push(['_setAccount', _AnalyticsCode]);
+    _gaq.push(['_trackPageview']);
+    window._gaq = _gaq;
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+}
 
 FacefontBg.startup();

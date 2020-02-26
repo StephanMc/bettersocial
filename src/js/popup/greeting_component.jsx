@@ -18,7 +18,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Util from "../Util"
 
-const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager()
+const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager();
 const localize = Util.localize;
 
 class GreetingComponent extends React.Component {
@@ -30,16 +30,15 @@ class GreetingComponent extends React.Component {
             fontFamily: settingsManager().getPreference("fontFamily") || "",
             collapse: true,
             useNotif: !!settingsManager().getPreference("useNotif")
-        }
+        };
 
-        this.handleChangeFontFamily = this.handleChangeFontFamily.bind(this)
-        this.handleChangeEnableFacefont = this.handleChangeEnableFacefont.bind(this)
+        this.handleChangeFontFamily = this.handleChangeFontFamily.bind(this);
+        this.handleChangeEnableFacefont = this.handleChangeEnableFacefont.bind(this);
     }
 
     handleChangeFontFamily = event => {
         const {name, value} = event.target;
-
-        this.setState({[event.target.name]: event.target.value},
+        this.setState({[name]: value},
             () => settingsManager().setPreference(name, value));
     };
 
@@ -54,7 +53,7 @@ class GreetingComponent extends React.Component {
 
     render() {
         const backgroundPage = chrome.extension.getBackgroundPage().FacefontBg;
-        const logo = require('../../img/icon-48.png')
+        const logo = require('../../img/icon-48.png');
 
         let notificationBadgeText = !this.state.useNotif ? "Disabled" : backgroundPage.getNotificationsManager().getNotificationCount();
 
@@ -67,8 +66,11 @@ class GreetingComponent extends React.Component {
                     borderRadius: 5
                 }}>
                     <Typography variant="h6" color="inherit" style={{fontWeight: 300}}>
+                        Better Social
+                    </Typography>
 
-                        Facefont
+                    <Typography variant="h6" color="inherit" style={{fontWeight: 300, fontSize: '1rem'}}>
+                        {localize("label_ex_facefont")}
                     </Typography>
 
                 </div>
@@ -196,6 +198,6 @@ class GreetingComponent extends React.Component {
             </div>
         )
     }
-};
+}
 
 export default hot(module)(GreetingComponent)

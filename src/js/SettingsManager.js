@@ -25,7 +25,7 @@ class SettingsManager {
             return 0;
 
         })
-    }
+    };
 
     defaultPreferences = {
         textSize: "14",
@@ -47,14 +47,6 @@ class SettingsManager {
         return this.availableFonts.safeWeb;
     }
 
-    setDeveloperName(name) {
-        this.currentDeveloperName = name;
-    }
-
-    getDeveloperName() {
-        return this.currentDeveloperName;
-    }
-
     getPreference(pName) {
         if (localStorage[pName] !== undefined) {
             return this.silenceJSONParse(localStorage[pName]);
@@ -73,7 +65,7 @@ class SettingsManager {
                 notificationsManager().runNotificationProcess();
             }
         }
-        //TODO: make content scripts know about that; with chrome.tabs.query (facebookurl).sendMessage(prefChange, with the newPref object, which is current localStorage)
+        // Make content scripts know about that
         chrome.tabs.query({url: "https://*.facebook.com/*"}, (tabs) => {
             tabs.forEach(tab => {
                 const changedPreference = {

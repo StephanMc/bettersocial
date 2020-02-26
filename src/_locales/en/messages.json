@@ -3,13 +3,13 @@
     "message": "Receive your Facebook notifications instantly in your browser, beautify your Facebook posts, play with status sizes and more."
   },
   "extension_full_name": {
-    "message": "Facefont: Get Facebook Alerts & Fonts"
+    "message": "Better Social: Get Facebook Alerts & Fonts"
   },
   "about_title": {
     "message": "About"
   },
   "about_description": {
-    "message": "Facefont is made with ❤, with the hope to make better your daily usage of Facebook."
+    "message": "Better Social is made with ❤, with the hope to make better your daily usage of Facebook."
   },
   "about_bug_found": {
     "message": "Found a bug ? Cool! You can quickly report to the below email address, I will hasten to correct ;-) <br />"
@@ -26,6 +26,9 @@
   "label_questions": {
     "message": "Questions / bug report"
   },
+  "label_ex_facefont": {
+    "message": "(former Facefont)"
+  },
   "text_questions": {
     "message": "For any question or bug report, feel free to contact me: "
   },
@@ -39,10 +42,10 @@
     "message": "Beautify your Facebook posts, receive your notifications instantly in your browser, and more. "
   },
   "label_popup_make_donation": {
-    "message": "You like Facefont ? Buy a ☕ to the developer!"
+    "message": "You like Better Social ? Buy a ☕ to the developer!"
   },
   "label_about": {
-    "message": "About FaceFont"
+    "message": "About Better Social"
   },
   "label_by": {
     "message": "By St&eacute;phane Kouadio : stephan.kouadio@gmail.com"
@@ -66,7 +69,7 @@
     "message": "General Options"
   },
   "label_enableFaceFont": {
-    "message": "Enable Facefont"
+    "message": "Enable Better Social"
   },
   "label_font_theme": {
     "message": "Font Theme"
@@ -138,7 +141,7 @@
     "message": "Please refresh Facebook page to apply changes."
   },
   "msgToolsFF": {
-    "message": "You can find FaceFont here : Tools menu --> FaceFont"
+    "message": "You can find Better Social here : Tools menu --> Better Social"
   },
   "previewText": {
     "message": "Happy birthday"
@@ -171,7 +174,7 @@
     "message": "notification on Facebook"
   },
   "NOTIFPOPUP_NOALL_TITLE": {
-    "message": "FaceFont"
+    "message": "Better Social"
   },
   "NOTIFPOPUP_NOALL_NEWNOTIF_OF": {
     "message": "New notification of"

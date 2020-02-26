@@ -14,10 +14,10 @@ class TermsOfUse extends React.Component {
                             <div className="row">
                                 <div className="col-md-12">
                                     <h1>
-                                        Facefont
+                                        Better Social
                                     </h1>
                                     <p>
-                                        Privacy Policy of Facefont
+                                        Privacy Policy of Better Social
                                     </p>
                                 </div>
                             </div>
@@ -37,7 +37,8 @@ class TermsOfUse extends React.Component {
 
                                         <p>This page informs you of our policies regarding the collection, use, and
                                             disclosure of personal data when you use our Service and the choices you
-                                            have associated with that data. Our Privacy Policy for Facefont is created
+                                            have associated with that data. Our Privacy Policy for Better Social is
+                                            created
                                             with the help of the <a href="https://www.freeprivacypolicy.com/">Free
                                                 Privacy Policy website</a>.</p>
 
@@ -100,7 +101,7 @@ class TermsOfUse extends React.Component {
 
                                         <h2>Use of Data</h2>
 
-                                        <p>Facefont uses the collected data for various purposes:</p>
+                                        <p>Better Social uses the collected data for various purposes:</p>
                                         <ul>
                                             <li>To provide and maintain the Service</li>
                                             <li>To notify you about changes to our Service</li>
@@ -125,7 +126,8 @@ class TermsOfUse extends React.Component {
                                             and process it there.</p>
                                         <p>Your consent to this Privacy Policy followed by your submission of such
                                             information represents your agreement to that transfer.</p>
-                                        <p>Facefont will take all steps reasonably necessary to ensure that your data is
+                                        <p>Better Social will take all steps reasonably necessary to ensure that your
+                                            data is
                                             treated securely and in accordance with this Privacy Policy and no transfer
                                             of your Personal Data will take place to an organization or a country unless
                                             there are adequate controls in place including the security of your data and
@@ -134,11 +136,12 @@ class TermsOfUse extends React.Component {
                                         <h2>Disclosure Of Data</h2>
 
                                         <h3>Legal Requirements</h3>
-                                        <p>Facefont may disclose your Personal Data in the good faith belief that such
+                                        <p>Better Social may disclose your Personal Data in the good faith belief that
+                                            such
                                             action is necessary to:</p>
                                         <ul>
                                             <li>To comply with a legal obligation</li>
-                                            <li>To protect and defend the rights or property of Facefont</li>
+                                            <li>To protect and defend the rights or property of Better Social</li>
                                             <li>To prevent or investigate possible wrongdoing in connection with the
                                                 Service
                                             </li>
