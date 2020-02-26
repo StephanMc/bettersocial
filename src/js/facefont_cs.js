@@ -59,14 +59,18 @@ export const Facefont = {
 
     // Instanciate timers at startup.
     runFacefont() {
-        if (!this.preferences.enableFacefont) return;
+        if (!this.preferences.enableFacefont) {
+            return;
+        }
 
         this.startTextSizeProcessing();
         //TODO: add additionnal steps for startup
     },
 
     startTextSizeProcessing() {
-        if (!this.preferences.enableTxtSize) return;
+        if (!this.preferences.enableTxtSize) {
+            return;
+        }
 
         this.parseDocument(Facefont_statusClass);
     },

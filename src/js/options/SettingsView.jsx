@@ -169,7 +169,7 @@ class SettingsView extends React.Component {
                                                 let value = e.target.value;
                                                 this.setState({
                                                     textSize: value
-                                                })
+                                                });
                                                 settingsManager().setPreference("textSize", value)
                                             }}
                                             disabled={!this.state.enableFacefont}
@@ -269,10 +269,11 @@ class SettingsView extends React.Component {
 
                             <h6>{localize("label_privacy")}</h6>
                             <div className="ml-4">
-                                <Button variant={"text"} onClick={this.toggle}>{localize("text_privacy_button")}</Button>
+                                <Button variant={"text"}
+                                        onClick={this.toggle}>{localize("text_privacy_button")}</Button>
                                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                                     <ModalHeader toggle={this.toggle}>Privacy</ModalHeader>
-                                    <ModalBody >
+                                    <ModalBody>
                                         <TermsOfUse/>
                                     </ModalBody>
                                     <ModalFooter>
@@ -289,7 +290,8 @@ class SettingsView extends React.Component {
 
                 <footer className="footer">
                     <div className="container">
-                        <img src={logo}/> {" "} <span className="text-muted">Better Social {appVersion}</span>
+                        <img src={logo} alt={"logo"}/> {" "} <span
+                        className="text-muted">Better Social {appVersion}</span>
                     </div>
                 </footer>
             </div>

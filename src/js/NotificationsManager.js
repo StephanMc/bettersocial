@@ -16,7 +16,6 @@ class NotificationsManager {
     isFirstTimeNotifCalled = true;
 
     audioResource = null;
-    audioTimer = null;
     firstPopupHasRun = false;
     onNotificationClickUrl = "https://www.facebook.com/notifications";
 
@@ -49,7 +48,6 @@ class NotificationsManager {
         if (this.notificationWorker == null) {
             // This starts the worker!
 
-            // const notificationFile = Util.getJSDir() + "notification.bundle.js";
             const notificationFile = Util.getJSDir() + "notification.js";
             this.notificationWorker = new Worker(notificationFile);
 
@@ -83,7 +81,7 @@ class NotificationsManager {
     updateUINotifCount(count) {
         // count = 1
         this.notificationBundle.notifCounter = count;
-        if (!localStorage["useNotif"] || count == 0) {
+        if (!localStorage["useNotif"] || count === 0) {
             chrome.browserAction.setBadgeText({text: ""});
         } else {
             chrome.browserAction.setBadgeText({text: "" + count});
@@ -133,28 +131,31 @@ class NotificationsManager {
     }
 
     processGetNotificationsCount(objResponse) {
-        var n = 0,
+        let n = 0,
             notifCounter = 0,
             msgCounter = 0,
             requestCounter = 0;
         try {
-            var parser = new DOMParser();
-            var mdoc = parser.parseFromString(objResponse.xhrResponseText.replace(/<!--/g, "").replace(/-->/g, ""), "text/html");
+            const parser = new DOMParser();
+            const mdoc = parser.parseFromString(objResponse.xhrResponseText.replace(/<!--/g, "").replace(/-->/g, ""), "text/html");
 
             // Notifs
-            var alls = mdoc.getElementById("notifications_jewel");
-            if (alls && (alls = alls.querySelector('a span[data-sigil="count"]')))
+            let alls = mdoc.getElementById("notifications_jewel");
+            if (alls && (alls = alls.querySelector('a span[data-sigil="count"]'))) {
                 n = notifCounter = parseInt(alls.firstChild.textContent);
+            }
 
             // Msg
             alls = mdoc.getElementById("messages_jewel");
-            if (alls && (alls = alls.querySelector('a span[data-sigil="count"]')))
+            if (alls && (alls = alls.querySelector('a span[data-sigil="count"]'))) {
                 n += msgCounter = parseInt(alls.firstChild.textContent);
+            }
 
             // Demandes
             alls = mdoc.getElementById("requests_jewel");
-            if (alls && (alls = alls.querySelector('a span[data-sigil="count"]')))
+            if (alls && (alls = alls.querySelector('a span[data-sigil="count"]'))) {
                 n += requestCounter = parseInt(alls.firstChild.textContent);
+            }
 
             this.updateUINotifCount(n);
             if (n > 0) {
@@ -166,8 +167,8 @@ class NotificationsManager {
     }
 
     tryPopupNotifications(notifCounter, msgCounter, requestCounter, mdoc) {
-        var notificationBundle = this.notificationBundle;
-        var totalNotif = notifCounter + msgCounter + requestCounter;
+        const notificationBundle = this.notificationBundle;
+        const totalNotif = notifCounter + msgCounter + requestCounter;
 
         Util.checkIsOnFacebook(isOnFacebook => {
             if (isOnFacebook) {
@@ -200,14 +201,14 @@ class NotificationsManager {
         const title =
             totalNotif +
             " " +
-            Util.localize(totalNotif == 1 ? "NOTIFPOPUP_ALL_TITLE_ONE" : "NOTIFPOPUP_ALL_TITLE_MANY");
+            Util.localize(totalNotif === 1 ? "NOTIFPOPUP_ALL_TITLE_ONE" : "NOTIFPOPUP_ALL_TITLE_MANY");
 
         const text =
             Util.localize("NOTIFPOPUP_ALL_YOU_HAVE") +
             " " +
             totalNotif +
             " " +
-            Util.localize(totalNotif == 1 ? "NOTIFPOPUP_ALL_NOTIFS_ON_FB_ONE" : "NOTIFPOPUP_ALL_NOTIFS_ON_FB_MANY");
+            Util.localize(totalNotif === 1 ? "NOTIFPOPUP_ALL_NOTIFS_ON_FB_ONE" : "NOTIFPOPUP_ALL_NOTIFS_ON_FB_MANY");
         this.doPopup(title, text);
     }
 
@@ -233,11 +234,12 @@ class NotificationsManager {
         if (notifCounter > 0) {
             alls = mdoc.querySelector('li[data-sigil="notification marea"]');
             if (alls != null) {
-                const fill = alls.querySelector(".blueName") !== null && notificationBundle.lastNotifId !== alls.id;
+                let allsBlueName = alls.querySelector(".blueName");
+                const fill = allsBlueName !== null && notificationBundle.lastNotifId !== alls.id;
                 if (fill) {
                     notificationBundle.lastNotifId = alls.id;
                     notificationBundle.lastNotifFullText = alls.textContent;
-                    const divNode = alls.querySelector(".blueName").parentNode;
+                    const divNode = allsBlueName.parentNode;
                     const text = divNode.textContent;
 
                     stringText = text + "\n";
@@ -266,7 +268,7 @@ class NotificationsManager {
             alls = mdoc.getElementById("friend_requests_section_jewel");
             if (alls != null) {
                 // First msg not read yet
-                var actor = alls.querySelector(".actor").firstChild.textContent;
+                const actor = alls.querySelector(".actor").firstChild.textContent;
                 alls = alls.querySelector("div[id^='m_jewel_req_']");
 
                 if (notificationBundle.lastRequestId !== alls.id) {
@@ -276,7 +278,9 @@ class NotificationsManager {
             }
         }
 
-        if (stringText == "") return null;
+        if (!stringText) {
+            return null;
+        }
 
         return stringText;
     }

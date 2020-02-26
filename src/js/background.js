@@ -25,7 +25,6 @@ export const FacefontBg = {
     audioTimer: null,
     isFirstTimeNotifCalled: true,
     firstPopupHasRun: false,
-    onNotificationClickUrl: "https://www.facebook.com",
     notificationWorker: null,
 
     getNotificationsManager() {
@@ -101,7 +100,7 @@ if (!window.navigator.userAgent.includes("Firefox")) {
     _gaq.push(['_setAccount', _AnalyticsCode]);
     _gaq.push(['_trackPageview']);
     window._gaq = _gaq;
-    (function() {
+    (function () {
         var ga = document.createElement('script');
         ga.type = 'text/javascript';
         ga.async = true;

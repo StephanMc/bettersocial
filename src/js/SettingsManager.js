@@ -25,7 +25,7 @@ class SettingsManager {
             return 0;
 
         })
-    }
+    };
 
     defaultPreferences = {
         textSize: "14",
@@ -45,14 +45,6 @@ class SettingsManager {
 
     getSafeWebFonts() {
         return this.availableFonts.safeWeb;
-    }
-
-    setDeveloperName(name) {
-        this.currentDeveloperName = name;
-    }
-
-    getDeveloperName() {
-        return this.currentDeveloperName;
     }
 
     getPreference(pName) {
