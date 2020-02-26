@@ -74,8 +74,9 @@ var options = {
       transform: function (content, path) {
         let contentString = content.toString();
         let manifestObject = JSON.parse(contentString);
-        if (process.env.IS_FIREFOX) {
-          delete manifestObject.content_security_policy;
+        // Allow analytics for other browser than Firefox.
+        if (!process.env.IS_FIREFOX) {
+          manifestObject["content_security_policy"] = "script-src 'self' https://ssl.google-analytics.com; object-src 'self'";
         }
         // generates the manifest file using the package.json informations
         return Buffer.from(JSON.stringify({
