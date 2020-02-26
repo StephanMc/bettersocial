@@ -73,7 +73,7 @@ class SettingsManager {
                 notificationsManager().runNotificationProcess();
             }
         }
-        //TODO: make content scripts know about that; with chrome.tabs.query (facebookurl).sendMessage(prefChange, with the newPref object, which is current localStorage)
+        // Make content scripts know about that
         chrome.tabs.query({url: "https://*.facebook.com/*"}, (tabs) => {
             tabs.forEach(tab => {
                 const changedPreference = {

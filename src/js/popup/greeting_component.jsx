@@ -38,8 +38,7 @@ class GreetingComponent extends React.Component {
 
     handleChangeFontFamily = event => {
         const {name, value} = event.target;
-
-        this.setState({[event.target.name]: event.target.value},
+        this.setState({[name]: value},
             () => settingsManager().setPreference(name, value));
     };
 
