@@ -57,7 +57,6 @@ class SettingsManager {
     setPreference(pName, pValue) {
         localStorage[pName] = pValue;
 
-        // Switch cases for preferences
         if (pName === "useNotif" || pName === "enableFacefont") {
             if (!pValue) {
                 notificationsManager().stopNotifWorker();

@@ -22,7 +22,6 @@ export const Facefont = {
 
 
     // Core
-    prefs: null,
     notificationWorker: null,
 
     // Meta data
@@ -72,7 +71,7 @@ export const Facefont = {
             return;
         }
 
-        this.parseDocument(Facefont_statusClass);
+        this.processPage(Facefont_statusClass);
     },
 
     createStyleElement(css) {
@@ -82,7 +81,6 @@ export const Facefont = {
 
         const head = document.head || document.getElementsByTagName('head')[0];
 
-        // Create link item <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
         if (!document.getElementById(LINK_ID)) {
             const link = document.createElement('link');
             link.id = LINK_ID;
@@ -106,13 +104,11 @@ export const Facefont = {
 
     },
 
-    parseDocument(statusClassName) {
+    processPage(statusClassName) {
 
-        // TODO: add link item with textsize for performance
         const textSize = this.preferences.textSize;
         let fontFamily = this.preferences.fontFamily || "";
 
-        // Set by user
         if (fontFamily) {
             fontFamily = "font-family: " + fontFamily + " !important;"
         }
@@ -130,18 +126,15 @@ export const Facefont = {
 };
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    // request is an object!
     const changedPreference = request.changedPreference;
-    // Update preference
+    // Update preferences
     for (let pName in changedPreference) {
         Facefont.preferences[pName] = changedPreference[pName];
     }
 
-    // Change CSS Text node //FIXME
-    Facefont.parseDocument(Facefont_statusClass);
+    // Update page
+    Facefont.processPage(Facefont_statusClass);
     sendResponse({}); // snub them.
 });
 
-
-// TODO: use tree walker
 Facefont.startup();

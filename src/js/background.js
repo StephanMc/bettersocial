@@ -36,8 +36,6 @@ export const FacefontBg = {
     },
 
     startup: function () {
-        // Checks weither it is necessary to inject cs in tabs
-        // on first install or upgrade
         this.installMessageListener();
 
         this.getNotificationsManager().installNotificationClickListener();
@@ -49,10 +47,10 @@ export const FacefontBg = {
     installMessageListener: function () {
         const _that = this;
         let notificationsManager = this.getNotificationsManager();
-        // Request Listener
+
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             switch (request.wish) {
-                case "loadAllPreferences": // This case is called each time FB is (re)loaded
+                case "loadAllPreferences":
                     sendResponse(_that.getSettingsManager().buildAllPrefResponseObject());
                     break;
 

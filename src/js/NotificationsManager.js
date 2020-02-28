@@ -21,11 +21,6 @@ class NotificationsManager {
 
     DEFAULT_MUSIC_URL = chrome.extension.getURL("/default.mp3");
 
-    // getJSDir() {
-    //     const rootdir = chrome.extension.getURL("");
-    //     return rootdir + "content/js/";
-    // }
-
     getDefaultAudioURL() {
         return this.DEFAULT_MUSIC_URL;
     }
@@ -46,8 +41,6 @@ class NotificationsManager {
         }
 
         if (this.notificationWorker == null) {
-            // This starts the worker!
-
             const notificationFile = Util.getJSDir() + "notification.js";
             this.notificationWorker = new Worker(notificationFile);
 
@@ -79,7 +72,6 @@ class NotificationsManager {
     }
 
     updateUINotifCount(count) {
-        // count = 1
         this.notificationBundle.notifCounter = count;
         if (!localStorage["useNotif"] || count === 0) {
             chrome.browserAction.setBadgeText({text: ""});
@@ -179,9 +171,6 @@ class NotificationsManager {
                 this.firstPopupHasRun = true;
 
                 this.doPopupNewNotificationsCount(totalNotif);
-                // (FIXME) Removing next line will do this behavior : after notif of "all" (doNewNotif()),
-                // will be popup-ed again the latest notification. By adding this below, there will be not
-                // second notification
 
                 this.tryFillNotificationData(notifCounter, msgCounter, requestCounter, mdoc);
             } else {
