@@ -3,10 +3,21 @@
 An extension to receive Facebook notifications in your browser, and customize Facebook status style.
 
 ## Build
-`npm run build`
+
+For Chromium based browsers, run:
+```sh
+npm run build
+```
 
 
-*(more content to come)*
+For Firefox, run: 
+```sh
+npm run build:firefox
+```
+
+This will create a `build` folder, that you can load into your browser as an unpacked extension.
+
+
 
 ## Contributing
 
