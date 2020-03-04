@@ -4,7 +4,7 @@
     "page": "options.html",
     "open_in_tab": true
   },
-  "version" :"10.0",
+  "version" :"10.0.1",
   "background": {
     "page": "background.html"
   },
@@ -20,8 +20,6 @@
   "manifest_version": 2,
   "name": "__MSG_extension_full_name__",
   "permissions": [
-    "unlimitedStorage",
-    "storage",
     "notifications",
     "tabs",
     "https://*.facebook.com/*"
@@ -34,7 +32,6 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*.facebook.com/*",
         "https://*.facebook.com/*"
       ],
       "js": [
