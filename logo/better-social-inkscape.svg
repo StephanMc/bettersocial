@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="129"
+   height="129"
+   viewBox="0 0 34.131461 34.131465"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
@@ -47,12 +47,12 @@
        inkscape:collect="always"
        xlink:href="#linearGradient827"
        id="linearGradient829"
-       x1="78.336748"
+       x1="78.336746"
        y1="87.37381"
        x2="115.08807"
        y2="108.3836"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.36647559,0,0,0.3664756,2.186075,130.18689)" />
+       gradientTransform="matrix(0.36647559,0,0,0.3664756,-16.943078,248.07063)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient831"
@@ -61,7 +61,8 @@
        y1="150.55934"
        x2="52.613888"
        y2="178.92256"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-19.140068,117.81508)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -70,9 +71,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8495471"
-     inkscape:cx="98.716603"
-     inkscape:cy="535.49758"
+     inkscape:zoom="4.0298682"
+     inkscape:cx="51.468743"
+     inkscape:cy="85.951844"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -80,7 +81,8 @@
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     units="px" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -89,28 +91,29 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(0,-262.86506)">
     <circle
        style="fill:#c8c4b7;fill-opacity:0.08673473;stroke:url(#linearGradient833);stroke-width:2.41636825;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path815"
-       cx="36.205799"
-       cy="162.11473"
+       cx="17.065731"
+       cy="279.93079"
        r="15.725149"
        inkscape:export-filename="C:\work\addons\chrome-extension-webpack-boilerplate\src\img\icon-16.png"
        inkscape:export-xdpi="11.999997"
        inkscape:export-ydpi="11.999997" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.61696243px;line-height:1.25;font-family:Jokerman;-inkscape-font-specification:Jokerman;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient829);fill-opacity:1;stroke:none;stroke-width:0.09696334;stroke-opacity:1;"
-       x="29.612852"
-       y="170.04765"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.61696243px;line-height:1.25;font-family:Jokerman;-inkscape-font-specification:Jokerman;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient829);fill-opacity:1;stroke:none;stroke-width:0.09696334;stroke-opacity:1"
+       x="10.483701"
+       y="287.93094"
        id="text821"
        transform="scale(1.0005707,0.99942962)"
        inkscape:export-filename="C:\work\addons\chrome-extension-webpack-boilerplate\src\img\icon-16.png"
@@ -118,8 +121,8 @@
        inkscape:export-ydpi="11.999997"><tspan
          sodipodi:role="line"
          id="tspan819"
-         x="29.612852"
-         y="170.04765"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Jokerman;-inkscape-font-specification:Jokerman;fill:url(#linearGradient829);fill-opacity:1;stroke-width:0.09696334;stroke:none;stroke-opacity:1;">B</tspan></text>
+         x="10.483701"
+         y="287.93094"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Jokerman;-inkscape-font-specification:Jokerman;fill:url(#linearGradient829);fill-opacity:1;stroke:none;stroke-width:0.09696334;stroke-opacity:1">B</tspan></text>
   </g>
 </svg>
