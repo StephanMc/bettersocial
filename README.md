@@ -2,7 +2,7 @@
 
 A Chrome/Firefox extension allowing to beautify your Facebook posts, get your Facebook notifications instantly in your browser, and more.
 
-Available in [Chrome Store](https://chrome.google.com/webstore/detail/facefont-get-facebook-ale/lodnfcjkieajnelomlbdgbghgbbicflg) and [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/facefont/) 
+Uses React 16+. Available in [Chrome Store](https://chrome.google.com/webstore/detail/facefont-get-facebook-ale/lodnfcjkieajnelomlbdgbghgbbicflg) and [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/facefont/). 
 
 ## Build
 
