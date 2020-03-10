@@ -13,14 +13,21 @@ const Util = {
     getUrlOfCurrentTab(callback) {
         chrome.tabs.query({active: true}, function (tabs) {
             if (callback) {
-                callback(tabs[0].url);
+                callback({tabUrl: tabs[0].url, windowId: tabs[0].windowId});
             }
         });
     },
 
+    /**
+     * Checks if the user is currently viewing Facebook.
+     * It also requires the current window to be opened.
+     */
     checkIsOnFacebook(callback) {
-        this.getUrlOfCurrentTab(function (urlResult) {
-            callback(/^https?:\/\/.*\.facebook.com\//.test(urlResult));
+        this.getUrlOfCurrentTab(function (result) {
+            const isFacebookUrl = /^https?:\/\/.*\.facebook.com\//.test(result.tabUrl);
+            chrome.windows.getCurrent(null, window => {
+                callback(isFacebookUrl && window.state !== "minimized");
+            });
         });
     },
 
