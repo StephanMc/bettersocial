@@ -43,10 +43,8 @@ const Util = {
 
             for (let i = 0; i < extensionTabs.length; i++) {
                 if (normalizeUrl(linkToOpen) === normalizeUrl(extensionTabs[i].url)) {
-                    chrome.windows.update(extensionTabs[i].windowId, {"focused": true}, () => {
-                        chrome.tabs.update(extensionTabs[i].id, {"highlighted": true, "active": true}, (updatedTab) => {
-                        });
-                    });
+                    chrome.windows.update(extensionTabs[i].windowId, {"focused": true});
+                    chrome.tabs.update(extensionTabs[i].id, {"highlighted": true, "active": true});
 
                     if (isPopupWindow) {
                         window.close();
