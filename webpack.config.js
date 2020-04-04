@@ -18,6 +18,8 @@ if (fileSystem.existsSync(secretsPath)) {
   alias["secrets"] = secretsPath;
 }
 
+var buildFolder = process.env.IS_FIREFOX ? "build-firefox" : "build";
+
 var options = {
   mode: process.env.NODE_ENV || "development",
   entry: {
@@ -31,7 +33,7 @@ var options = {
     notHotReload: ["facefont_cs"]
   },
   output: {
-    path: path.join(__dirname, "build"),
+    path: path.join(__dirname, buildFolder),
     filename: "[name].bundle.js",
     hotUpdateChunkFilename: 'hot/hot-update.js',
     hotUpdateMainFilename: 'hot/hot-update.json'
@@ -111,7 +113,7 @@ var options = {
     }),
     new WriteFilePlugin(),
 
-    new CleanWebpackPlugin({cleanOnceBeforeBuildPatterns: ["build/*hot-update*"]}),
+    new CleanWebpackPlugin({cleanOnceBeforeBuildPatterns: ["build/*hot-update*", "build-firefox/*hot-update*"]}),
   ]
 };
 
