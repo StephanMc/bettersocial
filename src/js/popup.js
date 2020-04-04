@@ -1,12 +1,12 @@
 import "../css/bootstrap.min.css"
 import "../css/popup.css";
 
-import Greeting from "./popup/greeting_component.jsx";
+import PopupContent from "./popup/popup_content.jsx";
 
 import React from "react";
 import {render} from "react-dom";
 
 render(
-    <Greeting/>,
+    <PopupContent/>,
     window.document.getElementById("app-container")
 );

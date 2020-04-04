@@ -14,7 +14,7 @@ import Util from "../Util"
 const settingsManager = () => chrome.extension.getBackgroundPage().requireLoader.settingsManager();
 const localize = Util.localize;
 
-class GreetingComponent extends React.Component {
+class PopupContent extends React.Component {
     constructor(props) {
         super(props);
 
@@ -193,4 +193,4 @@ class GreetingComponent extends React.Component {
     }
 }
 
-export default hot(module)(GreetingComponent)
+export default hot(module)(PopupContent)
